@@ -45,4 +45,5 @@ CREATE TABLE Note(
     foreign key (emailPassager) references Passager(email) ON DELETE CASCADE
 );
 
+CREATE SEQUENCE seqPaiement
 
