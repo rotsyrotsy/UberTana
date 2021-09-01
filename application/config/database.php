@@ -74,12 +74,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'pgsql:host=localhost;port=5432;dbname=ubertana',
+	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'postgres',
-	'password' => 'mdpProm13',
-	'database' => 'ubertana',
-	'dbdriver' => 'pdo', //ou postgre
+	'password' => 'mendrika',
+	'database' => 'uber',
+	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
