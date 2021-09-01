@@ -10,4 +10,13 @@ class Client extends CI_Model{
 		}
 		return $client;
 	}
+
+	public function getAroundDriver() {
+		$query = $this->db->query('SELECT * FROM Client');
+		$client = array();
+		foreach ($query->result_array() as $key) {
+			$client[] = $key;
+		}
+		return $client;
+	}
 }
