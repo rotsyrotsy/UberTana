@@ -30,9 +30,11 @@
   <!-- responsive style -->
   <!-- <link href="css/responsive.css" rel="stylesheet" /> -->
 
-  <link href="<?php echo site_url("assets/css/responsive.css") ?>" rel="stylesheet">
-  <link href="<?php echo site_url("assets/css/style.css") ?>" rel="stylesheet">
   <link href="<?php echo site_url("assets/css/bootstrap.css") ?>" rel="stylesheet">
+  <link href="<?php echo site_url("assets/css/style.css") ?>" rel="stylesheet">
+  <link href="<?php echo site_url("assets/css/responsive.css") ?>" rel="stylesheet">
+
+
 
 </head>
 
@@ -252,8 +254,12 @@
 
   <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>
   <script type="text/javascript" src="<?php echo site_url("assets/js/bootstrap.js") ?>"></script>
-  <script type="text/javascript" src="<?php echo site_url("assets/js/owl.carousel.min.js") ?>">
+  <!-- <script type="text/javascript" src="<?php echo site_url("assets/js/owl.carousel.min.js") ?>">
+  </script> -->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
+
   <script type="text/javascript" src="<?php echo site_url("assets/js/custom.js") ?>"></script>
   <!-- <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script> -->
   <!-- <script type="text/javascript" src="assets/js/bootstrap.js"></script> -->
