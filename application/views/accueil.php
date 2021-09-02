@@ -252,13 +252,14 @@
 
   <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>
   <script type="text/javascript" src="<?php echo site_url("assets/js/bootstrap.js") ?>"></script>
+  <script type="text/javascript" src="<?php echo site_url("assets/js/owl.carousel.min.js") ?>">
+  </script>
   <script type="text/javascript" src="<?php echo site_url("assets/js/custom.js") ?>"></script>
   <!-- <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script> -->
   <!-- <script type="text/javascript" src="assets/js/bootstrap.js"></script> -->
    <!-- <script type="text/javascript" src="assets/js/custom.js"></script> -->
 
-  <script type="text/javascript" src="<?php echo site_url("assets/js/owl.carousel.min.js") ?>">
-  </script>
+ 
 
 </body>
 
