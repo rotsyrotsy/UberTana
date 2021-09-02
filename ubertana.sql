@@ -4,15 +4,40 @@ CREATE TABLE Admin(
     mdp VARCHAR(50)
 );
 
-
+--client
 CREATE TABLE Passager(
     email VARCHAR(20) NOT NULL PRIMARY KEY,
     nom VARCHAR(20),
     mdp VARCHAR(50),
+<<<<<<< Updated upstream
     latitude REAL,
     longitude REAL
+=======
+    longitude DOUBLE PRECISION,
+    latitude DOUBLE PRECISION
+>>>>>>> Stashed changes
 );
+insert into Passager values ('P1@gmail.com','Rakoto','mdp', 47.53237774687274,-18.987805581715296);
+insert into Passager values ('P2@gmail.com','Rabe','mdp', 47.533783794481764,-18.993494646563423);
+insert into Passager values ('P3@gmail.com','Jean','mdp', 47.53288254789253,-18.984245266008585);
 
+
+SELECT  
+(
+   3959 *
+   acos(cos(radians(37)) * 
+   cos(radians(latitude)) * 
+   cos(radians(longitude) - 
+   radians(-122)) + 
+   sin(radians(37)) * 
+   sin(radians(latitude )))
+) AS distance 
+FROM Passager 
+HAVING distance < 28 
+ORDER BY distance LIMIT 0, 20;
+
+
+--chauffeur
 CREATE TABLE Client(
     email VARCHAR(20) NOT NULL PRIMARY KEY,
     nom VARCHAR(20),
@@ -21,9 +46,14 @@ CREATE TABLE Client(
     nationalite VARCHAR(20),
     dtn DATE,
     soldeInit DOUBLE PRECISION,
+<<<<<<< Updated upstream
     latitude REAL,
     longitude REAL,
     statut BOOLEAN -- 1 occupe 0 libre
+=======
+    longitude DOUBLE PRECISION,
+    latitude DOUBLE PRECISION
+>>>>>>> Stashed changes
 );
 
 CREATE TABLE Demande(

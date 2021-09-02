@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
 class Passager extends CI_Model{
+	$latitude=0;
+	$longitude=0;
 
 	public function getPassager(){
 		$query = $this->db->query('SELECT * FROM Passager');

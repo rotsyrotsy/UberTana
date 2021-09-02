@@ -76,4 +76,5 @@ class DatabaseController extends CI_Controller {
 
 		$this->load->view('vue',$data);
 	}
+	
 }
