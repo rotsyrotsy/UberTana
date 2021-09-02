@@ -77,3 +77,53 @@ CREATE TABLE Match(
     foreign key (IdCR) references ClientRequest(IdCR) ON DELETE CASCADE,
     foreign key (IdDriver) references Client(email) ON DELETE CASCADE
 );
+
+-- simulation compte bancaire
+
+CREATE TABLE BANKACCOUNT(
+    cardNumber char(16) NOT NULL PRIMARY KEY,
+    password bytea NOT NULL,
+    sold DOUBLE PRECISION NOT NULL
+);
+
+-- config ariary->coin
+
+CREATE TABLE CONFIG(
+    ariary DOUBLE PRECISION NOT NULL,
+    coin DOUBLE PRECISION NOT NULL
+);
+
+-- sequence de depot
+
+CREATE SEQUENCE exchange_seq;
+
+-- function create string id
+
+CREATE OR REPLACE Function create_id (seq integer, head varchar, format varchar) returns varchar AS $$
+        BEGIN
+                RETURN concat(head,to_char(seq, format));
+        END;
+$$ LANGUAGE plpgsql;
+
+-- generate depot Id function 
+
+CREATE OR REPLACE Function depot_id () returns varchar AS $$
+        declare 
+            seq integer;
+        BEGIN
+            select into seq nextval('exchange_seq');
+            return create_id(seq, 'DEP', '00000000');    
+        END;
+$$ LANGUAGE plpgsql;
+
+-- function depot
+
+CREATE OR REPLACE PROCEDURE depot (email VARCHAR, value DOUBLE PRECISION) AS $$
+        declare 
+            ratio DOUBLE PRECISION;
+        BEGIN
+            select into ration ariary/coin from CONFIG limit 1;
+            insert into depot values (depot_id(), email, ratio*value, current_timestamp);
+            commit;  
+        END;
+$$ LANGUAGE plpgsql;
