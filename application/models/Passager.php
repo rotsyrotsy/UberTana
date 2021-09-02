@@ -34,7 +34,7 @@ class Passager extends CI_Model{
 		$query = "SELECT * FROM Client WHERE  = '%s' ";
 		$result = $this->db->query(sprintf($query,$rayon));
 		$passager = array();
-		foreach ($query->result_array() as $key) {
+		foreach ($result->result_array() as $key) {
 			$passager[] = $key;
 		}
 		return $passager;
@@ -44,7 +44,7 @@ class Passager extends CI_Model{
 		$query = "SELECT * FROM Client WHERE email = '%s' ";
 		$result = $this->db->query(sprintf($query,$emailDriver));
 		$passager = array();
-		foreach ($query->result_array() as $key) {
+		foreach ($result->result_array() as $key) {
 			$passager[] = $key;
 		}
 		return $passager;
@@ -55,8 +55,8 @@ class Passager extends CI_Model{
 		$result = $this->db->query(sprintf($query,$emailPassager,$emailDriver));
 	}
 
-	public function setDemande($emailDriver,$emailPassager,$note){
-		$query = "INSERT INTO Demande VALUES ('%s','%s',%s)";
-		$result = $this->db->query(sprintf($query,$emailDriver,$emailPassager,$note));
-	}
+	// public function setDemande($emailDriver,$emailPassager,$note){
+	// 	$query = "INSERT INTO Demande VALUES ('%s','%s',%s)";
+	// 	$result = $this->db->query(sprintf($query,$emailDriver,$emailPassager,$note));
+	// }
 }
