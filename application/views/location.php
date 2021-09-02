@@ -15,10 +15,11 @@
             <p><input type="submit" id = "submitDestination" value="valider"></p>
         <!-- </form>
     </div> -->
+    <ul id="listChauffeurs"></ul>
    
     <script src="<?php echo getJs("jquery.min.js") ?>"></script>
     <script src="<?php echo getJs("angular.min.js") ?>"></script>
-    <!-- <script>
+    <!-- <script> // en AngularJs fa tsy mety mireturn ato
         var app=angular.module('app',[]);
 
         app.controller('control',function ($scope,$http) {
@@ -29,14 +30,15 @@
                         url:'Accueil/envoiCoordonnees',
                         params:{"latitude": position.coords.latitude, "longitude": position.coords.longitude, "destLatitude":$scope.destinationLat , "destLongitude":$scope.destinationLong},
                         headers:{'Content-type':'application/json'}
-                    }).success(function(data){
+                    }).then(function(data){
                         console.log(data.data)
                     })
                 }
             })
         })
     </script> -->
-     <script>
+
+     <script> //En AJAX jQuery
         $(document).ready(function(){
             $('#submitDestination').click(function(){
                 let destLat = $('#destinationLat').val();
@@ -49,6 +51,12 @@
                         dataType : 'json',
                         success:function(response){  
                             console.log(response);
+                            for (let i=0; i<response.length; i++){
+                                $('#listChauffeurs').append(
+                                    "<li>"+response[i].id+"</li>"
+                                )
+                            }
+                            
                         }
                     })
                 })
