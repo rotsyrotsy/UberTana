@@ -32,7 +32,7 @@
 
   <link href="<?php echo site_url("assets/css/responsive.css") ?>" rel="stylesheet">
   <link href="<?php echo site_url("assets/css/style.css") ?>" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="<?php echo site_url("assets/css/boostrap.css") ?>" rel="stylesheet">
+  <link href="<?php echo site_url("assets/css/bootstrap.css") ?>" rel="stylesheet">
 
 </head>
 
@@ -65,7 +65,7 @@
                     Connexion
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                   <a class="nav-link" href="#">Inscription</a>
                 </li>
               
@@ -90,7 +90,7 @@
     <div class="container px-0">
       <div class="heading_container">
         <h2 class="">
-          Ac<span>ce</span>uil
+          Ac<span>cu</span>eil
         </h2>
       </div>
 
