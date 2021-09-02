@@ -43,7 +43,7 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="index.html">
-            <img  src="images/logo.png" alt="" />
+            <img  src="<?php echo site_url("assets/images/logo.png") ?>" alt="" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -149,14 +149,14 @@
             </h4>
           </div>
           <div class="img-box">
-            <img src="images/client.jpg" alt="">
+            <img src="<?php echo site_url("assets/images/client.jpg") ?>" alt="">
           </div>
         </div>
         <div class="detail-box">
           <p>
             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem
           </p>
-          <img src="images/quote.png" alt="">
+          <img src="<?php echo site_url("assets/images/quote.png") ?>" alt="">
         </div>
       </div>
     </div>
@@ -171,16 +171,16 @@
     <div class="social_container">
       <div class="social_box">
         <a href="">
-          <img src="images/fb.png" alt="">
+          <img src="<?php echo site_url("assets/images/fb.png") ?>" alt="">
         </a>
         <a href="">
-          <img src="images/twitter.png" alt="">
+          <img src="<?php echo site_url("assets/images/twitter.png") ?>" alt="">
         </a>
         <a href="">
-          <img src="images/linkedin.png" alt="">
+          <img src="<?php echo site_url("assets/images/linkedin.png") ?>" alt="">
         </a>
         <a href="">
-          <img src="images/youtube.png" alt="">
+          <img src="<?php echo site_url("assets/images/youtube.png") ?>" alt="">
         </a>
       </div>
     </div>
@@ -218,15 +218,15 @@
             </h6>
             <div class="info_link-box">
               <a href="">
-                <img src="images/location.png" alt="">
+                <img src="<?php echo site_url("assets/images/location.png") ?>" alt="">
                 <span> Gb road 123 london Uk </span>
               </a>
               <a href="">
-                <img src="images/call.png" alt="">
+                <img src="<?php echo site_url("assets/images/call.png") ?>" alt="">
                 <span>+261 34 59 426 51</span>
               </a>
               <a href="">
-                <img src="images/mail.png" alt="">
+                <img src="<?php echo site_url("assets/images/mail.png") ?>" alt="">
                 <span> uberTana@gmail.com</span>
               </a>
             </div>
@@ -239,7 +239,7 @@
       <div class="container">
         <p>
           &copy; <span id="displayYear"></span>
-          <a href="https://html.design/"> Uber Tana</a>
+          <a href="#"> Uber Tana</a>
         </p>
       </div>
     </section>
@@ -257,7 +257,7 @@
   <!-- <script type="text/javascript" src="assets/js/bootstrap.js"></script> -->
    <!-- <script type="text/javascript" src="assets/js/custom.js"></script> -->
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  <script type="text/javascript" src="<?php echo site_url("assets/js/owl.carousel.min.js") ?>">
   </script>
 
 </body>
