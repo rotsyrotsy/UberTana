@@ -7,36 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <div ng-app="app" ng-controller="control">
-        <form ng-submit="submitDestination()"> -->
-            <p>Destination</p>
-            <p>Latitude:<input type="text" id="destinationLat" ng-model="destinationLat"></p>
-            <p>Longitude:<input type="text" id="destinationLong" ng-model="destinationLong"></p>
-            <p><input type="submit" id = "submitDestination" value="valider"></p>
-        <!-- </form>
-    </div> -->
+        <p>Destination</p>
+        <p>Latitude:<input type="text" id="destinationLat"></p>
+        <p>Longitude:<input type="text" id="destinationLong"></p>
+        <p><input type="submit" id = "submitDestination"></p>
     <ul id="listChauffeurs"></ul>
    
     <script src="<?php echo getJs("jquery.min.js") ?>"></script>
     <script src="<?php echo getJs("angular.min.js") ?>"></script>
-    <!-- <script> // en AngularJs fa tsy mety mireturn ato
-        var app=angular.module('app',[]);
-
-        app.controller('control',function ($scope,$http) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                $scope.submitDestination = function () {
-                    $http({
-                        method:'POST',
-                        url:'Accueil/envoiCoordonnees',
-                        params:{"latitude": position.coords.latitude, "longitude": position.coords.longitude, "destLatitude":$scope.destinationLat , "destLongitude":$scope.destinationLong},
-                        headers:{'Content-type':'application/json'}
-                    }).then(function(data){
-                        console.log(data.data)
-                    })
-                }
-            })
-        })
-    </script> -->
 
      <script> //En AJAX jQuery
         $(document).ready(function(){
@@ -53,7 +31,7 @@
                             console.log(response);
                             for (let i=0; i<response.length; i++){
                                 $('#listChauffeurs').append(
-                                    "<li>"+response[i].id+"</li>"
+                                    "<a href='Accueil/choisirChauffeur/"+response[i].id+"'><li>"+response[i].id+"</li></a>"
                                 )
                             }
                             

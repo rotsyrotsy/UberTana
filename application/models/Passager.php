@@ -10,6 +10,15 @@ class Passager extends CI_Model{
 		}
 		return $passager;
 	}
+	public function getPassagerById($mail){
+		$query = $this->db->query("SELECT * FROM Passager where email='%s'");
+		$result = $this->db->query(sprintf($query,$mail));
+		$passager = array();
+		foreach ($query->result_array() as $key) {
+			$passager[] = $key;
+		}
+		return $passager[0];
+	}
 	public function getListDriver($rayon){
 		$query = "SELECT * FROM Client WHERE  = '%s' ";
 		$result = $this->db->query(sprintf($query,$rayon));
@@ -31,7 +40,7 @@ class Passager extends CI_Model{
 	}
 
 	public function setDemande($emailDriver,$emailPassager){
-		$query = "INSERT INTO Demande VALUES ('%s','%s')";
+		$query = "INSERT INTO Demande VALUES ('%s','%s',NOW())";
 		$result = $this->db->query(sprintf($query,$emailPassager,$emailDriver));
 	}
 

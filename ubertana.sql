@@ -29,6 +29,7 @@ CREATE TABLE Client(
 CREATE TABLE Demande(
     emailP VARCHAR(20),
     emailC VARCHAR(20),
+    dateDemande date,
     foreign key (emailP) references Passager(email) ON DELETE CASCADE,
     foreign key (emailC) references Client(email) ON DELETE CASCADE
 );

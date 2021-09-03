@@ -35,5 +35,10 @@ class Accueil extends CI_Controller {
 
         echo json_encode ($listeChauffeurs);
     }
+    public function choisirChauffeur($idChauffeur){
+        $idClient = 'p1@gmail.com'; // anaty session
+        $this->load->model('passager');
+        $this->passager->setDemande($idChauffeur, $idClient);
+    }
 
 }
