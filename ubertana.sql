@@ -28,13 +28,6 @@ CREATE TABLE Client(
     statut BOOLEAN -- 1 occupe 0 libre
 );
 
-CREATE TABLE Demande(
-    emailP VARCHAR(20),
-    emailC VARCHAR(20),
-    dateDemande date,
-    foreign key (emailP) references Passager(email) ON DELETE CASCADE,
-    foreign key (emailC) references Client(email) ON DELETE CASCADE
-);
 CREATE TABLE Paiement(
     idPaiement VARCHAR(20) NOT NULL PRIMARY KEY,
     emailClient VARCHAR(20),
@@ -139,6 +132,9 @@ CREATE OR REPLACE PROCEDURE depot (email VARCHAR, value DOUBLE PRECISION) AS $$
             commit;  
         END;
 $$ LANGUAGE plpgsql;
+
+
+
 INSERT INTO Passager VALUES ('passenger1@gmail.com','passenger1',sha1('pass1')),
 ('passenger2@gmail.com','passenger2',sha1('pass2')),
 ('passenger3@gmail.com','passenger3',sha1('pass3'));
