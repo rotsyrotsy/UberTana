@@ -8,7 +8,9 @@ CREATE TABLE Admin(
 CREATE TABLE Passager(
     email VARCHAR(20) NOT NULL PRIMARY KEY,
     nom VARCHAR(20),
-    mdp VARCHAR(50)
+    mdp VARCHAR(50),
+    latitude REAL,
+    longitude REAL
 );
 
 CREATE TABLE Client(
@@ -20,9 +22,19 @@ CREATE TABLE Client(
     numTel VARCHAR(30),
     nationalite VARCHAR(20),
     dtn DATE,
-    soldeInit DOUBLE PRECISION
+    soldeInit DOUBLE PRECISION,
+    latitude REAL,
+    longitude REAL,
+    statut BOOLEAN -- 1 occupe 0 libre
 );
 
+CREATE TABLE Demande(
+    emailP VARCHAR(20),
+    emailC VARCHAR(20),
+    dateDemande date,
+    foreign key (emailP) references Passager(email) ON DELETE CASCADE,
+    foreign key (emailC) references Client(email) ON DELETE CASCADE
+);
 CREATE TABLE Paiement(
     idPaiement VARCHAR(20) NOT NULL PRIMARY KEY,
     emailClient VARCHAR(20),
@@ -127,3 +139,6 @@ CREATE OR REPLACE PROCEDURE depot (email VARCHAR, value DOUBLE PRECISION) AS $$
             commit;  
         END;
 $$ LANGUAGE plpgsql;
+INSERT INTO Passager VALUES ('passenger1@gmail.com','passenger1',sha1('pass1')),
+('passenger2@gmail.com','passenger2',sha1('pass2')),
+('passenger3@gmail.com','passenger3',sha1('pass3'));
