@@ -39,10 +39,10 @@ class Passager extends CI_Model{
 		return $passager;
 	}
 
-	public function setDemande($emailDriver,$emailPassager){
-		$query = "INSERT INTO Demande VALUES ('%s','%s',NOW())";
-		$result = $this->db->query(sprintf($query,$emailPassager,$emailDriver));
-	}
+	// public function setDemande($emailDriver,$emailPassager){
+	// 	$query = "INSERT INTO Demande VALUES ('%s','%s',NOW())";
+	// 	$result = $this->db->query(sprintf($query,$emailPassager,$emailDriver));
+	// }
 
 	public function getProximite1km($tab, $lat, $long){
 		$XLatitude=0.009;

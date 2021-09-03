@@ -40,5 +40,53 @@ class Accueil extends CI_Controller {
         $this->load->model('passager');
         $this->passager->setDemande($idChauffeur, $idClient);
     }
+    public function contexteClient()
+    {
+        // $lat = $this->input->post('latitude');
+        // $lng = $this->input->post('longitude');
+        // $destLat = $this->input->post('destLatitude');
+        // $destLng = $this->input->post('destLongitude');
+
+        $lat=-18.85;
+        $lng =47.88;
+        $destLat=-18.55;
+        $destLng=47.89;
+
+        $data = 
+            array(
+                "lat" => $lat, 
+                'lng' => $lng, 
+                'destLat' => $destLat,
+                'destLng' => $destLng
+            
+            );
+            $data2 = 
+                array(
+                    "lat" => "mmm", 
+                    'lng' => "mmmm", 
+                    'destLat' => "uuuu",
+                    'destLng' => "yyy"
+                
+                );
+        // $array = array(
+        //     'http' => array (
+        //         'method' => 'POST',
+        //         'header'=> "Content-type: application/x-www-form-urlencoded\r\n"
+        //             . "Content-Length: " . strlen($data) . "\r\n",
+        //         'content' => $data
+        //         )
+        //     );
+          
+        // $context = stream_context_create();
+        // stream_context_set_params($context,$data);
+        $ctx = stream_context_create();
+        $params = array("notification" => $data);
+        stream_context_set_params($ctx, $params);
+        $_SERVER['exemple']="ceci est un test";
+        $this->load->view('location');
+
+        // echo json_encode($context);
+        // var_dump(stream_context_get_params($context));
+    }
 
 }
