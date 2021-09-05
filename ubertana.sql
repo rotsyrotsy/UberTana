@@ -47,34 +47,39 @@ CREATE TABLE Note(
     foreign key (emailPassager) references Passager(email) ON DELETE CASCADE
 );
 
-CREATE TABLE ClientRequest(
-    IdCR VARCHAR(20) NOT NULL PRIMARY KEY,
-    locLogDep NUMERIC(20,15),
-    locLatDep NUMERIC(20,15),
-    locLogArr NUMERIC(20,15),
-    locLatArr NUMERIC(20,15),
-    date_Time TIMESTAMP,
-    emailPassager VARCHAR(20),
-    foreign key (emailPassager) references Passager(email) ON DELETE CASCADE
-);
+-- CREATE TABLE ClientRequest(
+--     IdCR VARCHAR(20) NOT NULL PRIMARY KEY,
+--     locLogDep NUMERIC(20,15),
+--     locLatDep NUMERIC(20,15),
+--     locLogArr NUMERIC(20,15),
+--     locLatArr NUMERIC(20,15),
+--     date_Time TIMESTAMP,
+--     emailPassager VARCHAR(20),
+--     foreign key (emailPassager) references Passager(email) ON DELETE CASCADE
+-- );
 
-CREATE SEQUENCE seqPaiement
+CREATE SEQUENCE seqPaiement;
+
+CREATE SEQUENCE seqDriverProposition START 1;
 
 CREATE TABLE DriverProposition(
     IdDrivProp VARCHAR(20) NOT NULL PRIMARY KEY,
-    IdCR VARCHAR(20),
     IdDriver VARCHAR(20),
-    propostion DOUBLE PRECISION,
-    statue VARCHAR(20),
-    foreign key (IdCR) references ClientRequest(IdCR) ON DELETE CASCADE,
-    foreign key (IdDriver) references Client(email) ON DELETE CASCADE
+    IdClient varchar(20),
+    proposition DOUBLE PRECISION,
+    statue INTEGER,
+    foreign key (IdDriver) references Client(email) ON DELETE CASCADE,
+    foreign key (IdClient) references Passager(email) ON DELETE CASCADE
 );
 
+CREATE SEQUENCE seqMatch START 1;
+
 CREATE TABLE Match(
-    IdMatch VARCHAR(20) NOT NULL PRIMARY KEY,
-    IdDriver VARCHAR(20),
-    IdCR VARCHAR(20),
-    foreign key (IdCR) references ClientRequest(IdCR) ON DELETE CASCADE,
+    idMatch VARCHAR(20) NOT NULL PRIMARY KEY,
+    idDriver VARCHAR(20),
+    idClient VARCHAR(20),
+    matchDate date,
+    foreign key (idClient) references Passager(email) ON DELETE CASCADE,
     foreign key (IdDriver) references Client(email) ON DELETE CASCADE
 );
 
@@ -127,3 +132,13 @@ CREATE OR REPLACE PROCEDURE depot (email VARCHAR, value DOUBLE PRECISION) AS $$
             commit;  
         END;
 $$ LANGUAGE plpgsql;
+
+insert into Passager values ('p1@gmail.com' ,'Jean','mdp');
+ insert into Passager values ('p2@gmail.com' ,'Jeanne','mdp');
+ insert into Passager values ('p3@gmail.com' ,'Jin','mdp');
+ insert into Passager values ('p4@gmail.com' ,'Marco','mdp');
+ insert into Passager values ('p5@gmail.com' ,'Mami','mdp');
+ insert into Passager values ('p6@gmail.com' ,'Koto','mdp');
+
+ insert into Client values ('C1@gmail.com','Bob',null,null,null,null,null);
+ insert into Client values ('C2@gmail.com','Rakoto',null,null,null,null,null);

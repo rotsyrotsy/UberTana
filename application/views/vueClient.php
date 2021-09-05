@@ -1,9 +1,3 @@
-<?php 
-    
-    var_dump($_SERVER['exemple']);
-    $_SERVER['exemple']='Ceci est';
-    var_dump($_SERVER['exemple']);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +14,11 @@
         <p>destinationlat:<input type="text" id="destinationLat"></p>
         <p>destinationlong:<input type="text" id="destinationLong"></p>
         <p><input type="submit" id = "submitDestination"></p>
-    <ul id="listChauffeurs"></ul>
+    <p id="verif"></p>
+    <p><a href="<?php echo base_url("ClientController/choisirChauffeur"); ?>">Liste des propositions chauffeur</a></p>
+    <?php if (isset($pasDeChauffeur)){
+        echo $pasDeChauffeur; 
+    } ?>
    
     <script src="<?php echo getJs("jquery.min.js") ?>"></script>
     <script src="<?php echo getJs("angular.min.js") ?>"></script>
@@ -34,21 +32,15 @@
                 let destLng = $('#destinationLong').val();
                 // navigator.geolocation.getCurrentPosition(function(position) {
                     $.ajax({
-                        url:'Accueil/contexteClient',
+                        url:'<?php echo base_url("ClientController/envoiCoordonnees"); ?>',
                         type:'post',
                         data:{latitude: lat, longitude: long, destLatitude: destLat, destLongitude: destLng},
                         dataType : 'json',
                         success:function(response){  
                             console.log(response);
-                            // for (let i=0; i<response.length; i++){
-                            //     $('#listChauffeurs').append(
-                            //         "<a href='Accueil/choisirChauffeur/"+response[i].id+"'><li>"+response[i].id+"</li></a>"
-                            //     )
-                            // }
-                            
+                            $('#verif').append(response);
                         }
                     })
-                // })
             })
            
         });

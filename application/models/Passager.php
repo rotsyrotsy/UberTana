@@ -19,30 +19,6 @@ class Passager extends CI_Model{
 		}
 		return $passager[0];
 	}
-	public function getListDriver($rayon){
-		$query = "SELECT * FROM Client WHERE  = '%s' ";
-		$result = $this->db->query(sprintf($query,$rayon));
-		$passager = array();
-		foreach ($result->result_array() as $key) {
-			$passager[] = $key;
-		}
-		return $passager;
-	}
-
-	public function getDriver($emailDriver){
-		$query = "SELECT * FROM Client WHERE email = '%s' ";
-		$result = $this->db->query(sprintf($query,$emailDriver));
-		$passager = array();
-		foreach ($result->result_array() as $key) {
-			$passager[] = $key;
-		}
-		return $passager;
-	}
-
-	// public function setDemande($emailDriver,$emailPassager){
-	// 	$query = "INSERT INTO Demande VALUES ('%s','%s',NOW())";
-	// 	$result = $this->db->query(sprintf($query,$emailPassager,$emailDriver));
-	// }
 
 	public function getProximite1km($tab, $lat, $long){
 		$XLatitude=0.009;
@@ -64,8 +40,20 @@ class Passager extends CI_Model{
 		}
 		return $ret;
 	}
-	// public function setDemande($emailDriver,$emailPassager,$note){
-	// 	$query = "INSERT INTO Demande VALUES ('%s','%s',%s)";
-	// 	$result = $this->db->query(sprintf($query,$emailDriver,$emailPassager,$note));
-	// }
+	public function choixChauffeur($idPassager){
+		$sql="SELECT dp.*,c.nom  FROM driverProposition dp join client c
+		on dp.idDriver=c.email where dp.idClient='%s' and dp.statue=0";
+        $sql=sprintf($sql,$idPassager);
+        $query=$this->db->query($sql);
+        var_dump($sql);
+        $i=0;
+		$val = null;
+        foreach($query->result_array() as $row){
+            foreach ($row as $key => $value) {
+                $val[$i][$key]=$value;
+            }
+            $i++;
+        }
+        return $val;
+	}
 }
