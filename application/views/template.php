@@ -1,6 +1,6 @@
 <?php
   if (!isset($page) || $page == null) {
-    $page = 'accueil';
+    $page = 'accueil_Chauffeur';
   }
   // echo $page;
 ?>
@@ -50,7 +50,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="#">
             <img  src="<?php echo site_url("assets/images/logo.png") ?>" alt="" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,8 +60,8 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                <li class="nav-item active">
+                  <a class="nav-link " href="#">Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
@@ -73,7 +73,7 @@
                     Connexion
                   </a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item ">
                   <a class="nav-link" href="#">Inscription</a>
                 </li>
               
@@ -93,24 +93,8 @@
 
 
   <!-- contact section -->
-  <div class="container px-0">
-      <div class="heading_container">
-        <h2 class="">
-          Con<span>ta</span>ct Us
-        </h2>
-      </div>
-
-    </div>
+ 
   <?php include $page.".php"; ?>
-
-  <!-- end contact section -->
-
-  <!-- client section -->
-
-
-
-  <!-- end client section -->
-
 
   <!-- info section -->
 

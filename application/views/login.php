@@ -1,5 +1,6 @@
 <section class="contact_section layout_padding-bottom layout_padding2-top">
     <div class="container container-bg">
+<<<<<<< Updated upstream
         <div class="row justify-content-center">
             <div class="col-md-8 col-sm-12" id="client">
                 <a class="col-md-10" id="vers_chauffeur" href="" style="text-decoration: none; color:cadetblue; margin-left: 10px; margin-top:10px; display: block;">
@@ -23,6 +24,37 @@
                         </form>
                     </div>
                 </div>
+=======
+        <div style="position: relative; width: 100%;">
+        <br>
+            <h3 style="text-align: center;">Êtes-vous :</h3>
+        </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-6 px-0">
+          <form action="">
+              <h2>Client</h2>
+            <div>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div>
+              <input type="password" placeholder="Mot de passe" />
+            </div>
+            <div class="d-flex ">
+              <button>
+                SE CONNECTER
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 col-lg-6 px-0" style="background-color: lightgray;">
+          <form action="">
+              <h2>Chauffeur</h2>
+            <div>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div>
+              <input type="password" placeholder="Mot de passe" />
+>>>>>>> Stashed changes
             </div>
             <div class="col-md-8 col-sm-12" id="chauffeur" style="display: none;">
                 <a class="col-md-10" id="vers_client" href="" style="text-decoration: none; color:cadetblue; margin-left: 10px; margin-top:10px; display: block;">
