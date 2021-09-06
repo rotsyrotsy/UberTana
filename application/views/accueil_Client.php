@@ -17,21 +17,21 @@
           </div>
         </div>
         <div class="col-md-5 col-lg-4 px-0">
-         <h2>Liste des clients</h2>
+         <h2>Liste des chauffeur</h2>
             <ul>
-                <li>Client</li>
-                <li>Client</li>
-                <li>Client</li>
-                <li>Client</li>
-                <li>Client</li>
-                <li>Client</li>
-                <li>Client</li>
-                <li>Client</li>
-                <li>Client</li>
-                <li>Client</li>
-                <li>Client</li>
-                <li>Client</li>
-                <li>Client</li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
+                <li>Proposition de Chauffeur </li>
             </ul>
         </div>
       </div>
@@ -41,7 +41,7 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-            <span>Avis </span> de nos Clients
+           <span>Avis </span> de nos Clients
         </h2>
       </div>
       <div class="box">

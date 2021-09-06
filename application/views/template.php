@@ -1,6 +1,6 @@
 <?php
   if (!isset($page) || $page == null) {
-    $page = 'login';
+    $page = 'accueil';
   }
   // echo $page;
 ?>
