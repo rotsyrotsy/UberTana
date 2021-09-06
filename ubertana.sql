@@ -47,16 +47,6 @@ CREATE TABLE Note(
     foreign key (emailPassager) references Passager(email) ON DELETE CASCADE
 );
 
--- CREATE TABLE ClientRequest(
---     IdCR VARCHAR(20) NOT NULL PRIMARY KEY,
---     locLogDep NUMERIC(20,15),
---     locLatDep NUMERIC(20,15),
---     locLogArr NUMERIC(20,15),
---     locLatArr NUMERIC(20,15),
---     date_Time TIMESTAMP,
---     emailPassager VARCHAR(20),
---     foreign key (emailPassager) references Passager(email) ON DELETE CASCADE
--- );
 
 CREATE SEQUENCE seqPaiement;
 

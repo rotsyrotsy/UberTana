@@ -16,17 +16,15 @@ class ClientController extends CI_Controller {
         $lng = $this->input->post('longitude');
         $destLat = $this->input->post('destLatitude');
         $destLng = $this->input->post('destLongitude');
-
-        $idPassager = 'P1@gmail.com';
+        $idPassager = 'p1@gmail.com';
         $clientFile=APPPATH.'client';
         $this->load->model('json');
         $this->json->insertInFileClient($clientFile, $idPassager, $lat, $lng, $destLat, $destLng);
-        
         $txt="Vos coordonnées on été envoyé";
         echo json_encode($txt);
     }
     public function choisirChauffeur(){
-        $idClient = 'p1@gmail.com'; // anaty session
+        $idClient = 'p2@gmail.com'; // anaty session
         $this->load->model('passager');
         $listeChauffeurs = $this->passager->choixChauffeur($idClient);
         if ($listeChauffeurs!=null){
@@ -55,7 +53,7 @@ class ClientController extends CI_Controller {
         $this->match->notMatch($idPassager); //mamafa ny propositions an'ny chauffeurs hafa
 
         $chauffeurFile=APPPATH.'chauffeur';
-        $this->match>deleteFromDriverFile($chauffeurFile, $idChauffeur); // mamafa anle position anle chauffeur 
+        $this->match->deleteFromDriverFile($chauffeurFile, $idChauffeur); // mamafa anle position anle chauffeur 
 
 
         $data=array();

@@ -9,10 +9,10 @@
 <body>
         <p>Destination</p>
         
-        <p>Latitude:<input type="text" id="lat"></p>
-        <p>Longitude:<input type="text" id="long"></p>
-        <p>destinationlat:<input type="text" id="destinationLat"></p>
-        <p>destinationlong:<input type="text" id="destinationLong"></p>
+        <p>Latitude:<input type="number" id="lat"></p>
+        <p>Longitude:<input type="number" id="long"></p>
+        <p>destinationlat:<input type="number" id="destinationLat"></p>
+        <p>destinationlong:<input type="number" id="destinationLong"></p>
         <p><input type="submit" id = "submitDestination"></p>
     <p id="verif"></p>
     <p><a href="<?php echo base_url("ClientController/choisirChauffeur"); ?>">Liste des propositions chauffeur</a></p>

@@ -2,8 +2,7 @@
 
 class Json extends CI_Model{
     public function insertInFileClient($clientFile, $idPassager, $lat, $lng, $destLat, $destLng){
-        $array = array('idPassager'=>$idPassager, 'latitude' => $lat,'longitude' => $lng,'destLat' => $destLat,'destLng' => $destLng);
-
+        $array = array('idPassager'=>$idPassager, 'latitude' => floatval($lat),'longitude' => floatval($lng),'destLat' => floatval($destLat),'destLng' => floatval($destLng));
         $myfile = fopen($clientFile, "r") or die("Unable to open file!");
         $before =  fread($myfile,filesize($clientFile));
 
@@ -22,7 +21,7 @@ class Json extends CI_Model{
         fclose($myfile);
     }
     public function insertInFileChauffeur($chauffeurFile, $idChauffeur, $lat, $lng){
-        $array = array('idChauffeur'=>$idChauffeur, 'latitude' => $lat,'longitude' => $lng);
+        $array = array('idChauffeur'=>$idChauffeur, 'latitude' => floatval($lat),'longitude' => floatval($lng));
 
         $myfile = fopen($chauffeurFile, "r") or die("Unable to open file!");
         $before =  fread($myfile,filesize($chauffeurFile));

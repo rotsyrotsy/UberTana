@@ -18,7 +18,7 @@ class ChauffeurController extends CI_Controller {
         $lat = -18.530;
         $lng = 47.255;
 
-        $idChauffeur = 'C1@gmail.com';
+        $idChauffeur = 'C2@gmail.com';
         $chauffeurFile=APPPATH.'chauffeur';
         $this->load->model('json');
         $this->json->insertInFileChauffeur($chauffeurFile, $idChauffeur, $lat, $lng);
@@ -37,7 +37,7 @@ class ChauffeurController extends CI_Controller {
     }
     public function envoiProposition(){
         $idPassager = $this->input->get('idPassager');
-        $idChauffeur = 'C1@gmail.com';
+        $idChauffeur = 'C2@gmail.com';
         $prix = $this->input->get('prix');
         $this->load->model('client');
         $this->client->proposerPrix($idChauffeur,$idPassager,$prix);
