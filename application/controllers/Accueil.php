@@ -21,6 +21,7 @@ class Accueil extends CI_Controller {
             'lng' => $lng, 
             'destLat' => $destLat,
             'destLng' => $destLng,
+			'page' => 'accueil'
         ];
         // get coordonnées des chauffeurs
         $chauffeurs = array();
@@ -42,3 +43,4 @@ class Accueil extends CI_Controller {
     }
 
 }
+?>
