@@ -41,7 +41,7 @@
   <link href="<?php echo site_url("assets/css/responsive.css") ?>" rel="stylesheet">
 
 
-
+  <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>
 </head>
 
 <body class="sub_page">
@@ -197,7 +197,7 @@
   <!-- end info section -->
 
 
-  <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>
+  
   <script type="text/javascript" src="<?php echo site_url("assets/js/bootstrap.js") ?>"></script>
   <!-- <script type="text/javascript" src="<?php echo site_url("assets/js/owl.carousel.min.js") ?>">
   </script> -->
