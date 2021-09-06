@@ -77,9 +77,9 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'postgres',
-	'password' => 'mdpProm13',
+	'password' => 'password',
 	'database' => 'ubertana',
-	'dbdriver' => 'postgre',
+	'dbdriver' => 'postgre', //ou postgre
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
