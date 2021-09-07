@@ -7,7 +7,30 @@ class ClientController extends CI_Controller {
 		parent::__construct();
 
 	}
-	
+    public function inscription(){
+        $email = $this->input->post('email');
+        $nom = $this->input->post('nom');
+        $mdp = $this->input->post('mdp');
+        $this->load->model('passager');
+        $passager = $this->passager->getPassagerLogin($email,$mdp);
+        if ($passager!=null){
+            $data = array();
+            $data = array(
+                'page' => 'login',
+                'errorLogin' => "this email already has an account, please log in"
+            );
+            $this -> load -> view('template', $data);
+        }else{
+            $this->passager->insertPassager($email,$nom,$mdp);
+            $new_passager = array('email' => $email,'nom' => $nom, 'mdp' => $mdp);
+            $this->session->set_userdata('passager',$new_passager);
+            $data = array();
+            $data = array(
+                'page' => 'map',
+            );
+            $this -> load -> view('template', $data);
+        }
+	}
 	public function index(){
         $idPassager = $this->input->post('idPassager');
         $mdp = $this->input->post('mdp');

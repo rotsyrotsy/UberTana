@@ -8,6 +8,29 @@ class ChauffeurController extends CI_Controller {
 
 	}
 	
+	public function inscription(){
+        $email = $this->input->get('email');
+        $mdp = $this->input->get('mdp');
+        $this->load->model('client');
+        $chauffeur = $this->client->getChauffeurLogin($email,$mdp);
+        if ($chauffeur!=null){
+            $data = array(
+                'page' => 'login',
+                'errorLoginDriver' => "login already exists"
+            );
+            $this -> load -> view('template', $data);
+          
+        }else{
+            $this->client->insertChauffeur($email,$mdp);
+            $new_chauffeur= array('email' => $email, 'mdp' => $mdp);
+            $this->session->set_userdata('chauffeur',$new_chauffeur);
+            $data = array(
+                'page' => 'accueil',
+            );
+            $this -> load -> view('template', $data);
+        }
+		$this->load->view('vueChauffeur');
+	}
 	public function index(){
         $idChauffeur = $this->input->post('idChauffeur');
         $mdp = $this->input->post('mdp');
@@ -20,7 +43,6 @@ class ChauffeurController extends CI_Controller {
             );
             $this -> load -> view('template', $data);
         }else{
-            $data = array();
             $data = array(
                 'page' => 'login',
                 'errorLoginDriver' => "login or password invalid"
