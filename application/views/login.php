@@ -1,11 +1,11 @@
 <section class="contact_section layout_padding-bottom layout_padding2-top">
-    <div class="container container-bg">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-sm-12" id="client">
+    <div class="container">
+        <div class="row justify-content-center col-md-8 container-bg" style="margin: auto;">
+            <div class="col-md-12" id="client_panel" style="">
                 <a class="col-md-10" id="vers_chauffeur" href="" style="text-decoration: none; color:cadetblue; margin-left: 10px; margin-top:10px; display: block;">
-                <br>    
-                <NOBR>Se connecter en tant que Chauffeur</NOBR>
+                    <NOBR>Se connecter en tant que Chauffeur</NOBR>
                 </a>
+<<<<<<< Updated upstream
                 <div class="" style="border-style: solid;">
                     <div style="border-style:solid;">
                         <form action="">
@@ -45,80 +45,75 @@
                                 </button>
                             </div>
                         </form>
+=======
+                <div class="col-md-8">
+                    <div class="" style="">
+                        <div style="">
+                            <form action="">
+                                <h2>Client</h2>
+                                <div>
+                                    <input id="champ_email_client" type="email" placeholder="Email" />
+                                </div>
+                                <div>
+                                    <input id="champ_mdp_client" type="password" placeholder="Mot de passe" />
+                                </div>
+                                <div class="d-flex ">
+                                    <button id="bt_connect_client">
+                                        SE CONNECTER
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="chauffeur_panel" style=" display : none;">
+                <a class="col-md-10" id="vers_client" href="" style="text-decoration: none; color:cadetblue; margin-left: 10px; margin-top:10px; display: block;">
+                    <NOBR>Se connecter en tant que Client</NOBR>
+                </a>
+                <div class="col-md-8">
+                    <div class="" style="">
+                        <div style="">
+                            <form action="">
+                                <h2>Chauffeur</h2>
+                                <div>
+                                    <input id="champ_email_client" type="email" placeholder="Email" />
+                                </div>
+                                <div>
+                                    <input id="champ_mdp_client" type="password" placeholder="Mot de passe" />
+                                </div>
+                                <div class="d-flex ">
+                                    <button id="bt_connect_client">
+                                        SE CONNECTER
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
             
+
         </div>
         <a href="inscription">Pas encore membre ? Inscrivez-vous</a>
     </div>
 </section>
 <script>
-    var httprequest = null;
-    var email_client = document.getElementById('champ_email_client');
-    var mdp_client = document.getElementById('champ_mdp_client');
-    var bt_client = document.getElementById('bt_connect_client');
-
-    bt_client.addEventListener('click', function() {
-        connectClient('TraitementLogin',email_client.value,mdp_client.value);
-    });
-
-    function connectClient (url, email, mdp) {
-            httpRequest = new XMLHttpRequest();
-            if (httpRequest == null) {
-                alert('impossible de creer xmlhttprequest');
-            }
-            httpRequest.onreadystatechange = retour_connect_client;
-            httpRequest.open('POST', url);
-            httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            httpRequest.send('email=' + encodeURIComponent(email)+"&mdp="+encodeURIComponent(mdp));
-            // console.log(cle);
-        }
-
-        function retour_connect_client () {
-            if (httpRequest.readyState == XMLHttpRequest.DONE) {
-                if (httpRequest.status == 200) {
-                    var reponse = JSON.parse(httpRequest.responseText);
-                    alert (reponse.retour+'\n'+reponse.utilisateur+'\n'+reponse.mdp);
-                    // retour.innerHTML += '<p>'+reponse.retour+'</p>';
-                } else {
-                    alert ('requête impossible');
-                }
-            }
-        }
-</script>
-<script>
-    $client_panel = $('#client');
-    $chauffeur_panel = $('#chauffeur');
+    $client_panel = $('#client_panel');
     $vers_chauffeur = $('#vers_chauffeur');
+    $chauffeur_panel = $('#chauffeur_panel');
     $vers_client = $('#vers_client');
 
-    // $vers_chauffeur.on('click', function(event) {
-    //     // $vers_chauffeur.hide();
-    //     event.preventDefault();
-    //     $client_panel.animate({
-    //         width: 'hide'
-    //     }, function() {
-    //         $chauffeur_panel.animate({
-    //             width: 'show'
-    //         }, function() {
-    //             // $vers_client.show();
-    //         });
-    //     });
-    // });
-    // $vers_client.on('click', function(event) {
-    //     // $vers_client.hide();
-    //     event.preventDefault();
-    //     $chauffeur_panel.animate({
-    //         width: 'hide'
-    //     }, function() {
-    //         $client_panel.animate({
-    //             width: 'show'
-    //         }, function() {
-    //             // $vers_chauffeur.show();
-    //         });
-    //     });
-    // });
+    $vers_chauffeur.on('click', function (event) {
+        event.preventDefault();
+        $client_panel.slideToggle();
+        $chauffeur_panel.slideToggle();
+    });
 
-    // $(this).show("slide", { direction: "left" }, 1000);
+    $vers_client.on('click', function (event) {
+        event.preventDefault();
+        $chauffeur_panel.slideToggle();
+        $client_panel.slideToggle();
+    })
 </script>

@@ -77,7 +77,11 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'postgres',
+<<<<<<< Updated upstream
 	'password' => 'admin',
+=======
+	'password' => 'password',
+>>>>>>> Stashed changes
 	'database' => 'ubertana',
 	'dbdriver' => 'postgre', //ou postgre
 	'dbprefix' => '',
