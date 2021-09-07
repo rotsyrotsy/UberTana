@@ -28,13 +28,6 @@
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet" />
 
-  <!-- bootstrap core css -->
-  <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css" /> -->
-
-  <!-- Custom styles for this template -->
-  <!-- <link href="css/style.css" rel="stylesheet" /> -->
-  <!-- responsive style -->
-  <!-- <link href="css/responsive.css" rel="stylesheet" /> -->
 
   <link href="<?php echo site_url("assets/css/bootstrap.css") ?>"   rel="stylesheet">
   <link href="<?php echo site_url("assets/css/style.css") ?>" rel="stylesheet">
@@ -70,7 +63,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="<?php echo site_url("Accueil/login"); ?>">
                     Connexion
                   </a>
                 </li>

@@ -23,9 +23,6 @@ CREATE TABLE Client(
     nationalite VARCHAR(20),
     dtn DATE,
     soldeInit DOUBLE PRECISION,
-    latitude REAL,
-    longitude REAL,
-    statut BOOLEAN -- 1 occupe 0 libre
 );
 
 CREATE TABLE Paiement(
