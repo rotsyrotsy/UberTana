@@ -11,7 +11,7 @@ class Accueil extends CI_Controller {
 	public function index(){
 		$this->load->view('template');
 	}
-    public function login(){
+    public function client(){
         $data['page'] = 'accueil_Client';
 		$this->load->view('template',$data);
 	}
