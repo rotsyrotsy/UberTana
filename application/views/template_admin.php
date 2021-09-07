@@ -61,12 +61,21 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link " href="#">Gestion des personnels<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Statistiques</a>
-                </li>
+                <?php if($page == "statistiques_admin") { ?>
+                  <li class="nav-item">
+                      <a class="nav-link " href="#">Gestion des personnels<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#">Statistiques</a>
+                  </li>
+                  <?php } else { ?>
+                    <li class="nav-item active">
+                      <a class="nav-link " href="#">Gestion des personnels<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Statistiques</a>
+                    </li>
+                  <?php } ?>
               </ul>
             </div>
           </div>
