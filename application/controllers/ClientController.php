@@ -9,14 +9,33 @@ class ClientController extends CI_Controller {
 	}
 	
 	public function index(){
-		$this->load->view('vueClient');
+        $idPassager = $this->input->post('idPassager');
+        $mdp = $this->input->post('mdp');
+        $this->load->model('passager');
+        $passager = $this->passager->getPassagerLogin($idPassager,$mdp);
+        if ($passager!=null){
+            if ( $this->session->userdata('passager')==null){
+                $this->session->set_userdata('passager',$passager);
+            }
+            $data = array(
+                'page' => 'map'
+            );
+            $this -> load -> view('map');
+        }else{
+            $data = array();
+            $data = array(
+                'page' => 'login',
+                'errorLogin' => "login or password invalid"
+            );
+            $this -> load -> view('template', $data);
+        }
 	}
     public function envoiCoordonnees(){
         $lat = $this->input->post('latitude');
         $lng = $this->input->post('longitude');
         $destLat = $this->input->post('destLatitude');
         $destLng = $this->input->post('destLongitude');
-        $idPassager = 'p1@gmail.com';
+        $idPassager = $this->session->userdata('passager');
         $clientFile=APPPATH.'client';
         $this->load->model('json');
         $this->json->insertInFileClient($clientFile, $idPassager, $lat, $lng, $destLat, $destLng);
@@ -24,7 +43,7 @@ class ClientController extends CI_Controller {
         echo json_encode($txt);
     }
     public function choisirChauffeur(){
-        $idClient = 'p2@gmail.com'; // anaty session
+        $idClient = $this->session->userdata('passager');
         $this->load->model('passager');
         $listeChauffeurs = $this->passager->choixChauffeur($idClient);
         if ($listeChauffeurs!=null){
@@ -39,7 +58,7 @@ class ClientController extends CI_Controller {
     }
     public function matchClientChauffeur(){
         $idChauffeur = $this->input->post('idChauffeur');
-        $idPassager = $this->input->post('idPassager');
+        $idPassager = $this->session->userdata('passager');
         $iddrivprop = $this->input->post('iddrivprop');
 
         //transaction paiement

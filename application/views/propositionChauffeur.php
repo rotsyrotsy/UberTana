@@ -17,7 +17,6 @@
                 <li>Chauffeur: <?php echo $propositions[$i]['nom']; ?></li>
                 <li>Prix: <?php echo $propositions[$i]['proposition']; ?> coin</li>
                 <input type="hidden" name="idChauffeur" value="<?php echo $propositions[$i]['iddriver']; ?>">
-                <input type="hidden" name="idPassager" value="<?php echo $propositions[$i]['idclient']; ?>">
                 <input type="hidden" name="iddrivprop" value="<?php echo $propositions[$i]['iddrivprop']; ?>">
                 <p><input type="submit" value="match"></p>
             </form>

@@ -9,16 +9,34 @@ class ChauffeurController extends CI_Controller {
 	}
 	
 	public function index(){
+        $idChauffeur = $this->input->post('idChauffeur');
+        $mdp = $this->input->post('mdp');
+        $this->load->model('client');
+        $chauffeur = $this->client->getChauffeurLogin($idChauffeur,$mdp);
+        if ($chauffeur!=null){
+            $this->session->set_userdata('chauffeur',$chauffeur);
+            $data = array(
+                'page' => 'accueil'
+            );
+            $this -> load -> view('template', $data);
+        }else{
+            $data = array();
+            $data = array(
+                'page' => 'login',
+                'errorLoginDriver' => "login or password invalid"
+            );
+            $this -> load -> view('template', $data);
+        }
 		$this->load->view('vueChauffeur');
 	}
     public function envoiCoordonnees(){
-        // $lat = $this->input->post('latitude');
-        // $lng = $this->input->post('longitude');
+        $lat = $this->input->post('latitude');
+        $lng = $this->input->post('longitude');
         
-        $lat = -18.530;
-        $lng = 47.255;
+        // $lat = -18.530;
+        // $lng = 47.255;
 
-        $idChauffeur = 'C2@gmail.com';
+        $idChauffeur =  $this->session->userdata('chauffeur');
         $chauffeurFile=APPPATH.'chauffeur';
         $this->load->model('json');
         $this->json->insertInFileChauffeur($chauffeurFile, $idChauffeur, $lat, $lng);
@@ -37,7 +55,7 @@ class ChauffeurController extends CI_Controller {
     }
     public function envoiProposition(){
         $idPassager = $this->input->get('idPassager');
-        $idChauffeur = 'C2@gmail.com';
+        $idChauffeur = $this->session->userdata('chauffeur');
         $prix = $this->input->get('prix');
         $this->load->model('client');
         $this->client->proposerPrix($idChauffeur,$idPassager,$prix);

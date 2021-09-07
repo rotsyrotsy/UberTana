@@ -10,14 +10,18 @@ class Passager extends CI_Model{
 		}
 		return $passager;
 	}
-	public function getPassagerById($mail){
-		$query = $this->db->query("SELECT * FROM Passager where email='%s'");
-		$result = $this->db->query(sprintf($query,$mail));
+	public function getPassagerLogin($mail, $mdp){
+		$query = "SELECT * FROM Passager where email='%s' and  mdp='%s'";
+		$result = $this->db->query(sprintf($query,$mail,$mdp));
 		$passager = array();
-		foreach ($query->result_array() as $key) {
+		foreach ($result->result_array() as $key) {
 			$passager[] = $key;
 		}
-		return $passager[0];
+		if (count($passager)>0){
+			return $passager[0];
+		}else{
+			return null;
+		}
 	}
 
 	public function getProximite1km($tab, $lat, $long){

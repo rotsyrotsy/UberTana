@@ -10,6 +10,19 @@ class Client extends CI_Model{
 		}
 		return $client;
 	}
+	public function getChauffeurLogin($mail, $mdp){
+		$query = "SELECT * FROM Client where email='%s' and  mdp='%s'";
+		$result = $this->db->query(sprintf($query,$mail,$mdp));
+		$chauffeur = array();
+		foreach ($result->result_array() as $key) {
+			$chauffeur[] = $key;
+		}
+		if (count($chauffeur)>0){
+			return $chauffeur[0];
+		}else{
+			return null;
+		}
+	}
 	public function getProximite1km($tab, $lat, $long){
 		$XLatitude=0.009;
 		$cosinusLong=cos(deg2rad($lat));
