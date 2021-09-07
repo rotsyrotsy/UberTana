@@ -17,10 +17,11 @@ class ClientController extends CI_Controller {
             if ( $this->session->userdata('passager')==null){
                 $this->session->set_userdata('passager',$passager);
             }
+            $data = array();
             $data = array(
-                'page' => 'map'
+                'idPassager' => $this->session->userdata('passager')
             );
-            $this -> load -> view('map');
+            $this -> load -> view('mapClient',$data);
         }else{
             $data = array();
             $data = array(
@@ -31,16 +32,18 @@ class ClientController extends CI_Controller {
         }
 	}
     public function envoiCoordonnees(){
-        $lat = $this->input->post('latitude');
-        $lng = $this->input->post('longitude');
-        $destLat = $this->input->post('destLatitude');
-        $destLng = $this->input->post('destLongitude');
-        $idPassager = $this->session->userdata('passager');
-        $clientFile=APPPATH.'client';
-        $this->load->model('json');
-        $this->json->insertInFileClient($clientFile, $idPassager, $lat, $lng, $destLat, $destLng);
-        $txt="Vos coordonnées on été envoyé";
-        echo json_encode($txt);
+        // $lat = $this->input->post('latitude');
+        // $lng = $this->input->post('longitude');
+        // $destLat = $this->input->post('destLatitude');
+        // $destLng = $this->input->post('destLongitude');
+        // $idPassager=$this->session->userdata('passager');
+
+        // $clientFile=APPPATH.'client';
+        // $this->load->model('json');
+        // $this->json->insertInFileClient($clientFile, $idPassager, $lat, $lng, $destLat, $destLng);
+        // $txt="Vos coordonnées on été envoyé";
+        // echo json_encode($this->session->all_userdata());
+        $this->load->view('test');
     }
     public function choisirChauffeur(){
         $idClient = $this->session->userdata('passager');
