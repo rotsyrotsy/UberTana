@@ -10,4 +10,15 @@ class Depot extends CI_Model{
 		}
 		return $depot;
 	}
+
+	public function chiffreAffMoisAnnee(){
+		$sql = "select * from turnoverIn(2021)";
+
+		$query = $this->db->query($sql);
+		$depot = array();
+		foreach ($query->result_array() as $key) {
+			$depot[] = $key;
+		}
+		return $depot;
+	}
 }
