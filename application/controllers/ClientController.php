@@ -14,7 +14,6 @@ class ClientController extends CI_Controller {
         $this->load->model('passager');
         $passager = $this->passager->getPassagerLogin($email,$mdp);
         if ($passager!=null){
-            $data = array();
             $data = array(
                 'page' => 'login',
                 'errorLogin' => "this email already has an account, please log in"
@@ -24,11 +23,7 @@ class ClientController extends CI_Controller {
             $this->passager->insertPassager($email,$nom,$mdp);
             $new_passager = array('email' => $email,'nom' => $nom, 'mdp' => $mdp);
             $this->session->set_userdata('passager',$new_passager);
-            $data = array();
-            $data = array(
-                'page' => 'map',
-            );
-            $this -> load -> view('template', $data);
+            $this -> load -> view('mapClient', $data);
         }
 	}
 	public function index(){
