@@ -8,13 +8,13 @@
                 </a>
                 <div class="" style="border-style: solid;">
                     <div style="border-style:solid;">
-                        <form action="">
+                        <form action="<?php echo base_url("ClientController/index"); ?>" method="post">
                             <h2>Client</h2>
                             <div>
-                                <input id="champ_email_client" type="email" placeholder="Email" />
+                                <input id="champ_email_client" name="idPassager" type="email" placeholder="Email" />
                             </div>
                             <div>
-                                <input id="champ_mdp_client" type="password" placeholder="Mot de passe" />
+                                <input id="champ_mdp_client" name="mdp" type="password" placeholder="Mot de passe" />
                             </div>
                             <div class="d-flex ">
                                 <button id="bt_connect_client">
@@ -22,8 +22,41 @@
                                 </button>
                             </div>
                         </form>
+                        <div><?php if (isset($errorLogin)){ echo $errorLogin; } ?></div>
                     </div>
                 </div>
+
+
+
+        <!-- <div style="position: relative; width: 100%;">
+            <h3 style="text-align: center;">Êtes-vous :</h3>
+        </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-6 px-0">
+          <form action="" method="post">
+              <h2>Client</h2>
+            <div>
+              <input type="email" name="idPassager" placeholder="Email" />
+            </div>
+            <div>
+              <input type="password" name="mdp" placeholder="Mot de passe" />
+            </div>
+            <div class="d-flex ">
+              <button>
+                SE CONNECTER
+              </button>
+            </div>
+            
+          </form>
+        </div>
+        <div class="col-md-6 col-lg-6 px-0" style="background-color: lightgray;">
+          <form action="<?php echo base_url("ChauffeurController/index"); ?>" method="post">
+              <h2>Chauffeur</h2>
+            <div>
+              <input type="email" name="idChauffeur" placeholder="Email" />
+            </div>
+            <div>
+              <input type="password" name="mdp" placeholder="Mot de passe" />
             </div>
             <div class="col-md-8 col-sm-12" id="chauffeur" style="display: none;">
                 <a class="col-md-10" id="vers_client" href="" style="text-decoration: none; color:cadetblue; margin-left: 10px; margin-top:10px; display: block;">
@@ -45,12 +78,13 @@
                                 </button>
                             </div>
                         </form>
+                        <div><?php if(isset($errorLoginDriver)){ echo $errorLoginDriver; } ?></div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             
         </div>
-        <a href="inscription">Pas encore membre ? Inscrivez-vous</a>
+        <a href="<?php echo site_url('Accueil/inscription'); ?>">Pas encore membre ? Inscrivez-vous</a>
     </div>
 </section>
 <script>

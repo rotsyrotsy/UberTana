@@ -1,6 +1,10 @@
 <?php
-  if (!isset($page) || $page == null) {
-    $page = 'accueil';
+  if (!isset($page) || $page == null ) {
+    if ($this->session->userdata('passager')!=null){
+      $page = 'accueil';
+    }else{
+      $page = 'login';
+    }
   }
   // echo $page;
 ?>
@@ -34,6 +38,7 @@
   <link href="<?php echo site_url("assets/css/responsive.css") ?>" rel="stylesheet">
   
 
+ 
 
   <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>
 </head>
@@ -173,15 +178,12 @@
   </section>
 
   <!-- end info section -->
-
-
   
+   <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>
   <script type="text/javascript" src="<?php echo site_url("assets/js/bootstrap.js") ?>"></script>
-  <!-- <script type="text/javascript" src="<?php echo site_url("assets/js/owl.carousel.min.js") ?>">
-  </script> -->
+  <script type="text/javascript" src="<?php echo site_url("assets/js/owl.carousel.min.js") ?>"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
   <script type="text/javascript" src="<?php echo site_url("assets/js/custom.js") ?>"></script>
   <!-- <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script> -->
