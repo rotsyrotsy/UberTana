@@ -2,7 +2,7 @@
     <div class="container">
         <div class="container-bg col-md-6 justify-content-center" style="margin:auto;">
             <div class="row">
-                <div class="" style="margin:auto">
+                <div class="" style="margin:auto;text-align:center">
                     <h4 style="text-align: center; margin-top: 10px;">S'inscrire</h4>
                     <form action="">
                         <div style="display: flex;">
