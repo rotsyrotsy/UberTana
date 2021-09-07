@@ -10,13 +10,13 @@
                         <form action="">
                             <h2>Client</h2>
                             <div>
-                                <input type="email" placeholder="Email" />
+                                <input id="champ_email_client" type="email" placeholder="Email" />
                             </div>
                             <div>
-                                <input type="password" placeholder="Mot de passe" />
+                                <input id="champ_mdp_client" type="password" placeholder="Mot de passe" />
                             </div>
                             <div class="d-flex ">
-                                <button>
+                                <button id="bt_connect_client">
                                     SE CONNECTER
                                 </button>
                             </div>
@@ -52,6 +52,40 @@
         <a href="inscription">Pas encore membre ? Inscrivez-vous</a>
     </div>
 </section>
+<script>
+    var httprequest = null;
+    var email_client = document.getElementById('champ_email_client');
+    var mdp_client = document.getElementById('champ_mdp_client');
+    var bt_client = document.getElementById('bt_connect_client');
+
+    bt_client.addEventListener('click', function() {
+        connectClient('TraitementLogin',email_client.value,mdp_client.value);
+    });
+
+    function connectClient (url, email, mdp) {
+            httpRequest = new XMLHttpRequest();
+            if (httpRequest == null) {
+                alert('impossible de creer xmlhttprequest');
+            }
+            httpRequest.onreadystatechange = retour_connect_client;
+            httpRequest.open('POST', url);
+            httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            httpRequest.send('email=' + encodeURIComponent(email)+"&mdp="+encodeURIComponent(mdp));
+            // console.log(cle);
+        }
+
+        function retour_connect_client () {
+            if (httpRequest.readyState == XMLHttpRequest.DONE) {
+                if (httpRequest.status == 200) {
+                    var reponse = JSON.parse(httpRequest.responseText);
+                    alert (reponse.retour+'\n'+reponse.utilisateur+'\n'+reponse.mdp);
+                    // retour.innerHTML += '<p>'+reponse.retour+'</p>';
+                } else {
+                    alert ('requête impossible');
+                }
+            }
+        }
+</script>
 <script>
     $client_panel = $('#client');
     $chauffeur_panel = $('#chauffeur');

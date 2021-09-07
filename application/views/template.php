@@ -36,9 +36,9 @@
   <!-- responsive style -->
   <!-- <link href="css/responsive.css" rel="stylesheet" /> -->
 
-  <link href="<?php echo site_url("assets/css/bootstrap.css") ?>" rel="stylesheet">
-  <link href="<?php echo site_url("assets/css/style.css") ?>" rel="stylesheet">
-  <link href="<?php echo site_url("assets/css/responsive.css") ?>" rel="stylesheet">
+  <link href="../assets/css/bootstrap.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/responsive.css" rel="stylesheet">
 
 
   <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>
