@@ -23,6 +23,10 @@ class Client extends CI_Model{
 			return null;
 		}
 	}
+	public function insertChauffeur($mail, $mdp){
+		$query = "INSERT INTO Client (email,mdp) VALUES('%s','%s')";
+		$this->db->query(sprintf($query,$mail,$mdp));
+	}
 	public function getProximite1km($tab, $lat, $long){
 		$XLatitude=0.009;
 		$cosinusLong=cos(deg2rad($lat));
