@@ -5,6 +5,7 @@ class Inscription extends CI_Controller{
         $data = array (
             'page' => 'inscription'
         );
+        $this->load->helper('Date');
         $this->load->view('template.php', $data);
     }
 }
