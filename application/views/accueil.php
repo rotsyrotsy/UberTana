@@ -8,7 +8,7 @@
                 <div class="row">
                   <div class="col-md-6 px-0">
                     <div class="img-box">
-                      <img src="<?php echo site_url("assets/images/slider-img.jpg") ?>" alt="" />
+                      <img src="<?php echo site_url("assets/images/background.jpg") ?>" alt="" />
                     </div>
                   </div>
                   <div class="col-md-6">
