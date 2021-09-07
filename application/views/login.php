@@ -5,47 +5,6 @@
                 <a class="col-md-10" id="vers_chauffeur" href="" style="text-decoration: none; color:cadetblue; margin-left: 10px; margin-top:10px; display: block;">
                     <NOBR>Se connecter en tant que Chauffeur</NOBR>
                 </a>
-<<<<<<< Updated upstream
-                <div class="" style="border-style: solid;">
-                    <div style="border-style:solid;">
-                        <form action="">
-                            <h2>Client</h2>
-                            <div>
-                                <input id="champ_email_client" type="email" placeholder="Email" />
-                            </div>
-                            <div>
-                                <input id="champ_mdp_client" type="password" placeholder="Mot de passe" />
-                            </div>
-                            <div class="d-flex ">
-                                <button id="bt_connect_client">
-                                    SE CONNECTER
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8 col-sm-12" id="chauffeur" style="display: none;">
-                <a class="col-md-10" id="vers_client" href="" style="text-decoration: none; color:cadetblue; margin-left: 10px; margin-top:10px; display: block;">
-                    <NOBR>Se connecter en tant que Client</NOBR>
-                </a>
-                <div class="" style="border-style: solid;">
-                    <div style="border-style:solid;">
-                        <form action="">
-                            <h2>Chauffeur</h2>
-                            <div>
-                                <input type="email" placeholder="Email" />
-                            </div>
-                            <div>
-                                <input type="password" placeholder="Mot de passe" />
-                            </div>
-                            <div class="d-flex ">
-                                <button>
-                                    <NOBR>SE CONNECTER</NOBR>
-                                </button>
-                            </div>
-                        </form>
-=======
                 <div class="col-md-8">
                     <div class="" style="">
                         <div style="">
@@ -89,7 +48,6 @@
                                 </div>
                             </form>
                         </div>
->>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
