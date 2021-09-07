@@ -3,7 +3,8 @@
         <div class="row justify-content-center">
             <div class="col-md-8 col-sm-12" id="client">
                 <a class="col-md-10" id="vers_chauffeur" href="" style="text-decoration: none; color:cadetblue; margin-left: 10px; margin-top:10px; display: block;">
-                    <NOBR>Se connecter en tant que Chauffeur</NOBR>
+                <br>    
+                <NOBR>Se connecter en tant que Chauffeur</NOBR>
                 </a>
                 <div class="" style="border-style: solid;">
                     <div style="border-style:solid;">
