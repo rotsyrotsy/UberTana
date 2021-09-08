@@ -28,6 +28,16 @@ class Passager extends CI_Model{
 			return null;
 		}
 	}
+	public function getPassagerById($mail){
+		$query = "SELECT * FROM Passager where email='%s'";
+		$query = sprintf($query,$mail);
+		$result = $this->db->query($query);
+		$client = array();
+		foreach ($result->result_array() as $key) {
+			$client[] = $key;
+		}
+		return $client[0];
+	}
 
 	public function getProximite1km($tab, $lat, $long){
 		$XLatitude=0.009;
@@ -54,7 +64,6 @@ class Passager extends CI_Model{
 		on dp.idDriver=c.email where dp.idClient='%s' and dp.statue=0";
         $sql=sprintf($sql,$idPassager);
         $query=$this->db->query($sql);
-        var_dump($sql);
         $i=0;
 		$val = null;
         foreach($query->result_array() as $row){

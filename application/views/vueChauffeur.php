@@ -39,7 +39,7 @@
 
                                 $('#listeClient').append(
                                     "<form action='<?php echo base_url("ChauffeurController/envoiProposition"); ?>' method='get'>"+
-                                    "<li>"+response[i]['idPassager']+"</li>"+
+                                    "<li>"+response[i]['nom']+"</li>"+
                                     "<li>"+response[i]['latitude']+"</li>"+
                                     "<li>"+response[i]['longitude']+"</li>"+
                                     "<li>"+response[i]['destLat']+"</li>"+

@@ -13,8 +13,8 @@
         <ul>
         <?php for ($i=0; $i<count($propositions); $i++){  ?>
             <form action="<?php echo base_url("ClientController/matchClientChauffeur"); ?>" method="post">
-                <li>idChauffeur: <?php echo $propositions[$i]['iddriver']; ?></li>
                 <li>Chauffeur: <?php echo $propositions[$i]['nom']; ?></li>
+                <li>email: <?php echo $propositions[$i]['iddriver']; ?></li>
                 <li>Prix: <?php echo $propositions[$i]['proposition']; ?> coin</li>
                 <input type="hidden" name="idChauffeur" value="<?php echo $propositions[$i]['iddriver']; ?>">
                 <input type="hidden" name="iddrivprop" value="<?php echo $propositions[$i]['iddrivprop']; ?>">

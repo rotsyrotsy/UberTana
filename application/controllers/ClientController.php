@@ -16,7 +16,7 @@ class ClientController extends CI_Controller {
         if ($passager!=null){
             $data = array(
                 'page' => 'login',
-                'errorLogin' => "this email already has an account, please log in"
+                'errorLogin' => "Cet email existe déjà, veuillez en entrer un autre."
             );
             $this -> load -> view('template', $data);
         }else{
@@ -26,7 +26,7 @@ class ClientController extends CI_Controller {
             $this -> load -> view('mapClient', $data);
         }
 	}
-	public function index(){
+	public function login(){
         $idPassager = $this->input->post('idPassager');
         $mdp = $this->input->post('mdp');
         $this->load->model('passager');
@@ -35,51 +35,48 @@ class ClientController extends CI_Controller {
             if ( $this->session->userdata('passager')==null){
                 $this->session->set_userdata('passager',$passager);
             }
-            $data = array();
-            $data = array(
-                'idPassager' => $this->session->userdata('passager')
-            );
-            $this -> load -> view('mapClient',$data);
+            $this -> load -> view('mapClient');
         }else{
-            $data = array();
             $data = array(
                 'page' => 'login',
-                'errorLogin' => "login or password invalid"
+                'errorLogin' => "email ou mot de passe invalide"
             );
             $this -> load -> view('template', $data);
         }
 	}
     public function envoiCoordonnees(){
-        // $lat = $this->input->post('latitude');
-        // $lng = $this->input->post('longitude');
-        // $destLat = $this->input->post('destLatitude');
-        // $destLng = $this->input->post('destLongitude');
-        // $idPassager=$this->session->userdata('passager');
+        $lat = $this->input->post('latitude');
+        $lng = $this->input->post('longitude');
+        $destLat = $this->input->post('destLatitude');
+        $destLng = $this->input->post('destLongitude');
+        $passager=$this->session->userdata('passager');
+        $idPassager=$passager['email'];
 
-        // $clientFile=APPPATH.'client';
-        // $this->load->model('json');
-        // $this->json->insertInFileClient($clientFile, $idPassager, $lat, $lng, $destLat, $destLng);
-        // $txt="Vos coordonnées on été envoyé";
-        // echo json_encode($this->session->all_userdata());
-        $this->load->view('test');
+        $clientFile=APPPATH.'client';
+        $this->load->model('json');
+        $this->json->insertInFileClient($clientFile, $idPassager, $lat, $lng, $destLat, $destLng);
+        $txt="Vos coordonnées ont été envoyé";
+        echo json_encode($txt);
     }
     public function choisirChauffeur(){
-        $idClient = $this->session->userdata('passager');
+        $passager = $this->session->userdata('passager');
+        $idClient=$passager['email'];
         $this->load->model('passager');
         $listeChauffeurs = $this->passager->choixChauffeur($idClient);
         if ($listeChauffeurs!=null){
             $data=array();
             $data['propositions']=$listeChauffeurs;
-            $this->load->view('propositionChauffeur',$data);
+            $this->load->view('mapClient',$data);
         }else{
             $data=array();
             $data['pasDeChauffeur']="Il n'y a pas de proposition de chauffeur";
-            $this->load->view('vueClient',$data);
+            $this->load->view('mapClient',$data);
         }
     }
     public function matchClientChauffeur(){
         $idChauffeur = $this->input->post('idChauffeur');
-        $idPassager = $this->session->userdata('passager');
+        $passager = $this->session->userdata('passager');
+        $idPassager = $passager['email'];
         $iddrivprop = $this->input->post('iddrivprop');
 
         //transaction paiement
@@ -98,8 +95,15 @@ class ClientController extends CI_Controller {
 
         $data=array();
         $data['matchReussi']="Merci de votre participation, votre chauffeur arrivera bientot";
-        $this->load->view('propositionChauffeur',$data);
+        $this->load->view('mapClient',$data);
 
+    }
+    public function deconnexion(){
+        $this->session->sess_destroy();
+        $data = array(
+            'page' => 'login'
+        );
+        $this -> load -> view('template', $data);
     }
 
 }

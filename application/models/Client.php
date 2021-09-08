@@ -10,9 +10,21 @@ class Client extends CI_Model{
 		}
 		return $client;
 	}
+	public function getClientByIdChauffeur($mail){
+		$query = "SELECT * FROM Client where email='%s'";
+		$query = sprintf($query,$mail);
+		$result = $this->db->query($query);
+		$client = array();
+		foreach ($result->result_array() as $key) {
+			$client[] = $key;
+		}
+		return $client[0];
+	}
 	public function getChauffeurLogin($mail, $mdp){
 		$query = "SELECT * FROM Client where email='%s' and  mdp='%s'";
-		$result = $this->db->query(sprintf($query,$mail,$mdp));
+		$query = sprintf($query,$mail,$mdp);
+		// var_dump($query);
+		$result = $this->db->query($query);
 		$chauffeur = array();
 		foreach ($result->result_array() as $key) {
 			$chauffeur[] = $key;
@@ -48,7 +60,7 @@ class Client extends CI_Model{
 		return $ret;
 	}
 	public function proposerPrix($idChauffeur,$idPassager,$proposition){
-		$query = "INSERT INTO DriverProposition VALUES ('DP' || nextval('seqDriverProposition'),'%s','%s',%d,0);";
+		$query = "INSERT INTO DriverProposition VALUES ('DP' || nextval('seqDriverProposition'),'%s','%s',%d,0, NOW());";
 		$query = sprintf($query,$idChauffeur,$idPassager,$proposition);
 		$this->db->query($query);
 	}

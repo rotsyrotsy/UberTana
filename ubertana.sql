@@ -58,6 +58,7 @@ CREATE TABLE DriverProposition(
     IdClient varchar(20),
     proposition DOUBLE PRECISION,
     statue INTEGER,
+    dateProposition date,
     foreign key (IdDriver) references Client(email) ON DELETE CASCADE,
     foreign key (IdClient) references Passager(email) ON DELETE CASCADE
 );
