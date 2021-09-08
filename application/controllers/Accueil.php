@@ -35,6 +35,12 @@ class Accueil extends CI_Controller {
         $data['page'] = 'accueil_Client';
 		$this->load->view('template',$data);
 	}
+	public function guide(){
+		$data = array(
+			'page'=>'guide'
+		);
+		$this->load->view('template',$data);
+	}
 
 }
 ?>
