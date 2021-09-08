@@ -94,7 +94,6 @@ $passager =  $this->session->userdata('passager');
       // Create the search box and link it to the UI element.
       const input = document.getElementById("pac-input");
       const searchBox = new google.maps.places.SearchBox(input);
-      carte.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
       // Bias the SearchBox results towards current map's viewport.
       carte.addListener("bounds_changed", () => {
         searchBox.setBounds(carte.getBounds());
