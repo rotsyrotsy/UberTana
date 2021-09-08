@@ -23,6 +23,15 @@
         public function goTotemplate(){
             $this->load->view('template_admin');
         }
+		public function gestion_chauffeur(){
+			$this->load->view('gestion_admin_chauffeur');
+		}
+		public function gestion_client(){
+			$this->load->view('gestion_admin_client');
+		}
+		public function gestion_coin(){
+			$this->load->view('gestion_admin_coin');
+		}
 		// public function getListNoteDriver()
 		// {
 		// 	$data['driverNote'] = $this->admin->getDriverNote();
