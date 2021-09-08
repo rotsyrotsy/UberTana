@@ -40,7 +40,7 @@ $passager =  $this->session->userdata('passager');
       var mapOptions = {
         center: new google.maps.LatLng(-18.986021, 47.532735), //se centrant sur ITU
         zoom: 19,
-        mapTypeId: google.maps.MapTypeId.SATELLITE
+        mapTypeId: google.maps.MapTypeId.HYBRID
       };
       var carte = new google.maps.Map(document.getElementById("carteId"), mapOptions);
       var lat = [];
