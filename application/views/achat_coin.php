@@ -16,7 +16,7 @@ $prix_coin = 1000;
             <h2>Achat de coin</h2>
             <div style="display: flex; flex-wrap: nowrap; margin-top: 40px;">
                 <label style="margin-right: 10px;" class="col-form-label">Coin : </label>
-                <input style="margin-right: 5px;" id="champ_nb_coin" type="number" min="0" value="0">
+                <input style="margin-right: 5px;" id="champ_nb_coin" type="number" min="0" value="0" name="valeur">
                 <button style="margin-right: 2px;" class="btn btn-danger" id="minus_bt">-</button>
                 <button class="btn btn-success" id="plus_bt">+</button>
             </div>
@@ -28,31 +28,21 @@ $prix_coin = 1000;
             <label style="margin-top: 20px;">Moyen de paiement</label>
             <div style="margin-top: 0;">
                 <input type="radio" name="moyen">
-                <img src="assets/images/visa.png" class="icone">
-                <img src="assets/images/mastercard.png" class="icone">
+                <img src="<?php echo site_url('assets/images/visa.png'); ?>" class="icone">
+                <img src="<?php echo site_url('assets/images/mastercard.png'); ?>" class="icone">
                 <input type="radio" name="moyen">
-                <img src="assets/images/paypal.png" class="payp">
+                <img src="<?php echo site_url('assets/images/paypal.png'); ?>" class="payp">
             </div>
 
-            <fieldset disabled style="border: 2px; border-style: solid; border-color: black; padding: 10px;">
+            <fieldset style="border: 2px; border-style: solid; border-color: black; padding: 10px;">
                 <legend>Carte de crédit</legend>
                 <div>
-                    <label class="col-form-label">Adresse de facturation : </label>
-                    <input>
+                    <label class="col-form-label">Numéro de Carte  : </label>
+                    <input type="text" name="numero">
                 </div>
                 <div>
-                    <label class="col-form-label">Titulaire : </label>
-                    <input>
-                </div>
-                <div class="row justify-content-between" style="padding-left:17px; padding-right:17px;">
-                    <div>
-                        <label class="col-form-label">Numéro : </label>
-                        <input>
-                    </div>
-                    <div>
-                        <label class="col-form-label">CVV : </label>
-                        <input>
-                    </div>
+                    <label class="col-form-label">Mot de Passe : </label>
+                    <input type="password" name="mdp">
                 </div>
             </fieldset>
 
