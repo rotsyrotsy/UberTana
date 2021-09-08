@@ -59,9 +59,9 @@ class ChauffeurController extends CI_Controller {
         $chauffeur =  $this->session->userdata('chauffeur');
         $idChauffeur = $chauffeur['email'];
 
-        $chauffeurFile=APPPATH.'chauffeur';
-        $this->load->model('json');
-        $this->json->insertInFileChauffeur($chauffeurFile, $idChauffeur, $lat, $lng);
+        // $chauffeurFile=APPPATH.'chauffeur';
+        // $this->load->model('json');
+        // $this->json->insertInFileChauffeur($chauffeurFile, $idChauffeur, $lat, $lng);
 
 
         $clientFile=APPPATH.'client';
@@ -72,21 +72,21 @@ class ChauffeurController extends CI_Controller {
             $listeClient = $this->client->getProximite1km($client,$lat,$lng);
             $retour=array();
 
-            $this->load->model('passager');
-            for($i=0; $i<count($listeClient); $i++){
-                $pass = $this->passager->getPassagerById($listeClient[$i]['idPassager']);
-                $retour[$i]['nom']=$pass['nom'];
-                $retour[$i]['latitude']=$listeClient[$i]['latitude'];
-                $retour[$i]['longitude']=$listeClient[$i]['longitude'];
-                $retour[$i]['destLat']=$listeClient[$i]['destLat'];
-                $retour[$i]['destLng']=$listeClient[$i]['destLng'];
-                $retour[$i]['idPassager']=$listeClient[$i]['idPassager'];
-            }
-            if (count($listeClient)>0){
-                echo json_encode($retour);
-            }else{
-                echo json_encode("Il n'y a pas de client à proximité");
-            }
+            // $this->load->model('passager');
+            // for($i=0; $i<count($listeClient); $i++){
+            //     $pass = $this->passager->getPassagerById($listeClient[$i]['idPassager']);
+            //     $retour[$i]['nom']=$pass['nom'];
+            //     $retour[$i]['latitude']=$listeClient[$i]['latitude'];
+            //     $retour[$i]['longitude']=$listeClient[$i]['longitude'];
+            //     $retour[$i]['destLat']=$listeClient[$i]['destLat'];
+            //     $retour[$i]['destLng']=$listeClient[$i]['destLng'];
+            //     $retour[$i]['idPassager']=$listeClient[$i]['idPassager'];
+            // }
+            // if (count($listeClient)>0){
+            //     echo json_encode($retour);
+            // }else{
+                echo json_encode($listeClient);
+            // }
         }else{
             echo json_encode("Il n'y a pas de client à proximité");
         }
@@ -101,7 +101,6 @@ class ChauffeurController extends CI_Controller {
         $data=array();
         $data['response']="proposition de prix envoyée";
         $this->load->view('mapChauffeur',$data);
-
     }
     public function deconnexion(){
         $this->session->sess_destroy();

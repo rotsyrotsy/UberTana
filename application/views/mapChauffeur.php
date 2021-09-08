@@ -1,6 +1,5 @@
 <?php
 $chauffeur =  $this->session->userdata('chauffeur');
-var_dump($chauffeur);
 ?>
 <!DOCTYPE html>
 <html>

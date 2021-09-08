@@ -1,8 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
 class Json extends CI_Model{
-    public function insertInFileClient($clientFile, $idPassager, $lat, $lng, $destLat, $destLng){
-        $array = array('idPassager'=>$idPassager, 'latitude' => floatval($lat),'longitude' => floatval($lng),'destLat' => floatval($destLat),'destLng' => floatval($destLng));
+    public function insertInFileClient($clientFile, $idPassager, $lat, $lng, $destLat, $destLng,$nom){
+        $array = array('idPassager'=>$idPassager,'nom'=>$nom, 'latitude' => floatval($lat),'longitude' => floatval($lng),'destLat' => floatval($destLat),'destLng' => floatval($destLng));
         $myfile = fopen($clientFile, "r") or die("Unable to open file!");
         $before =  fread($myfile,filesize($clientFile));
 
@@ -20,8 +20,8 @@ class Json extends CI_Model{
         }
         fclose($myfile);
     }
-    public function insertInFileChauffeur($chauffeurFile, $idChauffeur, $lat, $lng){
-        $array = array('idChauffeur'=>$idChauffeur, 'latitude' => floatval($lat),'longitude' => floatval($lng));
+    public function insertInFileChauffeur($chauffeurFile, $idChauffeur, $lat, $lng,$nom){
+        $array = array('idChauffeur'=>$idChauffeur,'nom'=>$nom,'latitude' => floatval($lat),'longitude' => floatval($lng));
 
         $myfile = fopen($chauffeurFile, "r") or die("Unable to open file!");
         $before =  fread($myfile,filesize($chauffeurFile));

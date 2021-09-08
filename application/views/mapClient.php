@@ -212,6 +212,9 @@ $passager =  $this->session->userdata('passager');
           <div id="carteId">LA CARTE</div>
         </div>
         <div class="col-md-5 col-lg-4 px-0">
+            <div class="alert alert-info" role="alert">  
+              <input id="pac-input" class="controls" type="text" placeholder="Rechercher un lieu" />
+            </div>
           <div class="d-flex ">
             <button id="send">
               Envoyer les coordonnées
@@ -219,10 +222,8 @@ $passager =  $this->session->userdata('passager');
           </div>
           <span id="verif"></span></br>
           <div>
-
-            <div class="alert alert-info" role="alert">
-              <a href="<?php echo base_url("ClientController/choisirChauffeur"); ?>">Liste des propositions de chauffeur</a>
-              <input id="pac-input" class="controls" type="text" placeholder="Search Box" />
+            <div>
+              <center><h5><a href="<?php echo base_url("ClientController/choisirChauffeur"); ?>">Liste des propositions de chauffeur</a></h5></center>
             </div>
             <?php if (isset($pasDeChauffeur)) { ?>
               <div class="alert alert-danger" role="alert">
@@ -237,7 +238,6 @@ $passager =  $this->session->userdata('passager');
               if (isset($propositions)) {  ?>
 
                 <div class="list-group">
-                  <h5>Les propositions de course</h5>
                   <?php for ($i = 0; $i < count($propositions); $i++) {  ?>
                     <a href="#" class="list-group-item list-group-item-action list-group-item-light">
                       <form action="<?php echo base_url("ClientController/matchClientChauffeur"); ?>" method="post">
