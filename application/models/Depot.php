@@ -28,6 +28,14 @@ class Depot extends CI_Model{
 
 		$query = $this->db->query($sql);
 
+		$depot = $query->row_array();
+		return $depot;
+	}
+
+	public function annee(){
+		$sql = "select distinct extract(year from date_heure) as annee from depot";
+
+		$query = $this->db->query($sql);
 		$depot = array();
 		foreach ($query->result_array() as $key) {
 			$depot[] = $key;

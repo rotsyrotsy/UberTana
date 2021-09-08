@@ -13,8 +13,11 @@
 		// }
         public function index(){
 
-            $this->load->model('depot');
-		    $data['chiffre'] = $this->depot->chiffreAffMoisAnnee($annee);
+            // $this->load->model('depot');
+			$data['year'] = $this->depot->annee();
+			$annee = 2021;
+			$data['annee'] = $annee;
+			$data['chiffre'] = $this->depot->chiffreAffMoisAnnee($annee);
 		    $data['moyenne'] = $this->depot->moyenneCAAnnee($annee);
             $data['page_admin'] = 'gestion_admin_accueil';
             $this->load->view('template_admin',$data);
@@ -38,6 +41,18 @@
 			$this->load->view('template_admin',$data);
 		}
 
+		public function affCA(){
+			$annee = $this->input->post('annee');
+			if($annee == null) {
+				$annee = 2021;
+			}
+			$data['year'] = $this->depot->annee();
+			$data['chiffre'] = $this->depot->chiffreAffMoisAnnee($annee);
+		    $data['moyenne'] = $this->depot->moyenneCAAnnee($annee);
+			$data['annee'] = $annee;
+			$data['page_admin'] = 'gestion_admin_accueil';
+            $this->load->view('template_admin',$data);
+		}
 		// public function getListNoteDriver()
 		// {
 		// 	$data['driverNote'] = $this->admin->getDriverNote();

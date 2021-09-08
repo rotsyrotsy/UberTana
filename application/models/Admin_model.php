@@ -72,8 +72,9 @@ class Admin_model extends CI_Model{
 	{
 		$query = "SELECT * FROM CONFIG";
 		$query =$this->db->query($query);
-		$config = $query->row_array();
-		return $config;
+
+		$ariary = $query->row_array();
+		return $ariary;
 	}
 }
 ?>

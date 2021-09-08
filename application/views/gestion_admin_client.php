@@ -1,5 +1,5 @@
 <h1 class="h3 mb-2 text-gray-800">Tableau</h1>
-  <p class="mb-4">Tableau permettant de lister les clients et les chauffeurs avec leurs notes avec la capacité de les 
+  <p class="mb-4">Tableau permettant de lister les clients avec leurs notes ayant pour capacité de les 
       supprimer en cas de trop mauvaise note .
   </p>
 
