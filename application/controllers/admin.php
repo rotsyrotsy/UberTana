@@ -26,12 +26,14 @@
         }
 		public function gestion_chauffeur(){
 			$data['page_admin'] = 'gestion_admin_chauffeur';
+			$data['chauffeur'] = $this->note->noteChauffeur();
 			$data['note'] = $this->admin_model->getDriverNote();
 			$this->load->view('template_admin',$data);
 			
 		}
 		public function gestion_client(){
 			$data['page_admin'] = 'gestion_admin_client';
+			$data['passager'] = $this->note->notePassager();
 			$data['note'] = $this->admin_model->getPassengerNote();
 			$this->load->view('template_admin',$data);
 		}

@@ -286,6 +286,91 @@
                 });
 			</script>
     <?php }?>
+        
+        <?php if(ISSET($chauffeur)){
+			$nom = array();
+			$note = array();
+			for ($i=0; $i < count($chauffeur) ; $i++) { 
+			    $nom[$i] = $chauffeur[$i]['nomchauffeur'];
+			    $note[$i] = $chauffeur[$i]['notemoyenne'];	    
+		} ?>
+
+        <script>
+                var nom = <?php echo json_encode($nom); ?>;
+                var note = <?php echo json_encode($note); ?>;
+                var ctx = document.getElementById('myChart');
+
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: nom,
+                        datasets: [{
+                            label: 'Note',
+                            data: note,
+                            backgroundColor: 
+                                '#4e73df',
+
+                            borderColor: 
+                                'rgba(153, 102, 235, 1)',
+
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                	}
+                                }]
+                    		}
+                    	}
+                });
+			</script>
+    	<?php }?>
+
+        <?php if(ISSET($passager)){
+			$nom = array();
+			$note = array();
+			for ($i=0; $i < count($passager) ; $i++) { 
+			    $nom[$i] = $passager[$i]['nompassager'];
+			    $note[$i] = $passager[$i]['notemoyenne'];
+			    
+		} ?>
+
+            <script>
+                var nom = <?php echo json_encode($nom); ?>;
+                var note = <?php echo json_encode($note); ?>;
+                var ctx = document.getElementById('myChart');
+
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: nom,
+                        datasets: [{
+                            label: 'Note',
+                            data: note,
+                            backgroundColor: 
+                                '#4e73df',
+
+                            borderColor: 
+                                'rgba(153, 102, 235, 1)',
+
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                	}
+                                }]
+                    		}
+                    	}
+                });
+			</script>
+    	<?php }?>
 </body>
 
 </html>

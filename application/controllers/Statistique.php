@@ -37,11 +37,11 @@ class Statistique extends CI_Controller {
 		$this->load->view('stat',$data);
 	}
 
-	public function chiffreAffaire(){
-		$this->load->model('depot');
-		$data['chiffre'] = $this->depot->chiffreAffMoisAnnee();
+	// public function chiffreAffaire(){
+	// 	$this->load->model('depot');
+	// 	$data['chiffre'] = $this->depot->chiffreAffMoisAnnee();
 
-		// $this->load->view('stat',$data);
-		$this->load->view('template_admin',$data);
-	}
+	// 	// $this->load->view('stat',$data);
+	// 	$this->load->view('template_admin',$data);
+	// }
 }
