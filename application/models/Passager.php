@@ -10,9 +10,9 @@ class Passager extends CI_Model{
 		}
 		return $passager;
 	}
-	public function insertPassager($email,$nom,$mdp){
-		$query = "INSERT INTO Passager VALUES ('%s','%s','%s')";
-		$this->db->query(sprintf($query,$email,$nom,$mdp));
+	public function insertPassager($email,$nom,$prenom,  $mdp,$numtel, $nationalite, $dtn,$sexe){
+		$query = "INSERT INTO Passager VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')";
+		$this->db->query(sprintf($query,$email,$nom,$prenom,  $mdp,$numtel, $nationalite, $dtn,$sexe));
 
 	}
 	public function getPassagerLogin($mail, $mdp){

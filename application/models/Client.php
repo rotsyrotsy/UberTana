@@ -35,9 +35,11 @@ class Client extends CI_Model{
 			return null;
 		}
 	}
-	public function insertChauffeur($mail, $mdp){
-		$query = "INSERT INTO Client (email,mdp) VALUES('%s','%s')";
-		$this->db->query(sprintf($query,$mail,$mdp));
+	public function insertChauffeur($email,$nom,$prenom, $modele, $matricule , $mdp,$numtel, $nationalite, $dtn,$sexe){
+		$query = "INSERT INTO Client (email,nom,prenom, modele, matricule , mdp,numtel, nationalite, dtn,sexe, soldeinit) VALUES('%s','%s','%s','%s', '%s', '%s','%s','%s','%s','%s',5 )";
+		$query = sprintf($query,$email,$nom,$prenom, $modele, $matricule , $mdp,$numtel, $nationalite, $dtn,$sexe);
+		// var_dump($query);
+		$this->db->query($query);
 	}
 	public function getProximite1km($tab, $lat, $long){
 		$XLatitude=0.009;

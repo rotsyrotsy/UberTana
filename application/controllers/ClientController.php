@@ -10,20 +10,25 @@ class ClientController extends CI_Controller {
     public function inscription(){
         $email = $this->input->post('email');
         $nom = $this->input->post('nom');
+        $prenom = $this->input->post('prenom');
         $mdp = $this->input->post('mdp');
+        $numtel = $this->input->post('numtel');
+        $sexe = $this->input->post('sexe');
+        $nationalite = $this->input->post('nationalite');
+        $dtn = $this->input->post('annee')."-".$this->input->post('mois')."-".$this->input->post('jour');
         $this->load->model('passager');
         $passager = $this->passager->getPassagerLogin($email,$mdp);
         if ($passager!=null){
             $data = array(
-                'page' => 'login',
+                'page' => 'inscriptionClient',
                 'errorLogin' => "Cet email existe déjà, veuillez en entrer un autre."
             );
             $this -> load -> view('template', $data);
         }else{
-            $this->passager->insertPassager($email,$nom,$mdp);
+            $this->passager->insertPassager($email,$nom,$prenom,  $mdp,$numtel, $nationalite, $dtn,$sexe);
             $new_passager = array('email' => $email,'nom' => $nom, 'mdp' => $mdp);
             $this->session->set_userdata('passager',$new_passager);
-            $this -> load -> view('mapClient', $data);
+            $this -> load -> view('mapClient');
         }
 	}
 	public function login(){

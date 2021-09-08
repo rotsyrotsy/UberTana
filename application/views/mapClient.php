@@ -229,12 +229,101 @@
       </div>
     </div>
   </section>
+    <!-- info section -->
+
+    <section class="info_section  layout_padding2-top">
+    <div class="social_container">
+      <div class="social_box">
+        <a href="">
+          <img src="<?php echo site_url("assets/images/fb.png") ?>" alt="">
+        </a>
+        <a href="">
+          <img src="<?php echo site_url("assets/images/twitter.png") ?>" alt="">
+        </a>
+        <a href="">
+          <img src="<?php echo site_url("assets/images/linkedin.png") ?>" alt="">
+        </a>
+        <a href="">
+          <img src="<?php echo site_url("assets/images/youtube.png") ?>" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="info_container ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              A PROPOS
+            </h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              Instagram
+            </h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipi
+              scing elit, sed doLorem ipsum dolor sit
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              AIDE
+            </h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              CONTACTEZ-NOUS
+            </h6>
+            <div class="info_link-box">
+              <a href="">
+                <img src="<?php echo site_url("assets/images/location.png") ?>" alt="">
+                <span> Gb road 123 london Uk </span>
+              </a>
+              <a href="">
+                <img src="<?php echo site_url("assets/images/call.png") ?>" alt="">
+                <span>+261 34 59 426 51</span>
+              </a>
+              <a href="">
+                <img src="<?php echo site_url("assets/images/mail.png") ?>" alt="">
+                <span> uberTana@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer section -->
+    <section class=" footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span>
+          <a href="#"> Uber Tana</a>
+        </p>
+      </div>
+    </section>
+    <!-- footer section -->
+
+
+  <!-- end info section -->
   
+   <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>
+  <script type="text/javascript" src="<?php echo site_url("assets/js/bootstrap.js") ?>"></script>
   <script type="text/javascript" src="<?php echo site_url("assets/js/owl.carousel.min.js") ?>"></script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
   <script type="text/javascript" src="<?php echo site_url("assets/js/custom.js") ?>"></script>
+  <!-- <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script> -->
+  <!-- <script type="text/javascript" src="assets/js/bootstrap.js"></script> -->
+   <!-- <script type="text/javascript" src="assets/js/custom.js"></script> -->
+
+ 
 </body>
 
 </html>

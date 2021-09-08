@@ -1,10 +1,6 @@
 <?php
   if (!isset($page) || $page == null ) {
-    if ($this->session->userdata('passager')!=null){
       $page = 'accueil';
-    }else{
-      $page = 'login';
-    }
   }
   // echo $page;
 ?>
@@ -72,14 +68,13 @@
                   </a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="#">Inscription</a>
+                  <a class="nav-link" href="<?php echo site_url('Accueil/inscription')?>?option=passager">Inscription passager</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="<?php echo site_url('Accueil/inscription')?>?option=chauffeur">Inscription chauffeur</a>
                 </li>
               
               </ul>
-              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-              </form>
-              <a class="nav-link" href="#">Nom Chauffeur</a>
             </div>
           </div>
         </nav>

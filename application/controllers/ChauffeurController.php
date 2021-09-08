@@ -9,27 +9,30 @@ class ChauffeurController extends CI_Controller {
 	}
 	
 	public function inscription(){
-        $email = $this->input->get('email');
-        $mdp = $this->input->get('mdp');
+        $email = $this->input->post('email');
+        $mdp = $this->input->post('mdp');
+        $nom = $this->input->post('nom');
+        $prenom = $this->input->post('prenom');
+        $numtel = $this->input->post('numtel');
+        $sexe = $this->input->post('sexe');
+        $nationalite = $this->input->post('nationalite');
+        $dtn = $this->input->post('annee')."-".$this->input->post('mois')."-".$this->input->post('jour');
+        $modele = $this->input->post('modele');
+        $matricule = $this->input->post('matricule');
         $this->load->model('client');
         $chauffeur = $this->client->getChauffeurLogin($email,$mdp);
         if ($chauffeur!=null){
             $data = array(
-                'page' => 'login',
-                'errorLoginDriver' => "Cet email existe déjà, veuillez en entrer un autre."
+                'page' => 'inscriptionChauffeur',
+                'errorInscriptionDriver' => "Cet email existe déjà, veuillez en entrer un autre."
             );
             $this -> load -> view('template', $data);
-          
         }else{
-            $this->client->insertChauffeur($email,$mdp);
-            $new_chauffeur= array('email' => $email, 'mdp' => $mdp);
+            $this->client->insertChauffeur($email,$nom,$prenom, $modele, $matricule , $mdp,$numtel, $nationalite, $dtn,$sexe);
+            $new_chauffeur= array('email' => $email, 'mdp' => $mdp, 'nom'=>$nom);
             $this->session->set_userdata('chauffeur',$new_chauffeur);
-            $data = array(
-                'page' => 'accueil',
-            );
-            $this -> load -> view('template', $data);
+            $this -> load -> view('mapChauffeur');
         }
-		$this->load->view('vueChauffeur');
 	}
 	public function login(){
         $idChauffeur = $this->input->post('idChauffeur');
