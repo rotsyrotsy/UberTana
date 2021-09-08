@@ -31,7 +31,7 @@ class Chauffeur extends CI_Model
         $sold = $this->check_sold($cardNumber, $password);
         
         if($sold < $value){
-            throw new Exception('sold insuffisant !!');
+            throw new Exception('solde insuffisant !!');
         } 
 
         $this->db->query($sql);
