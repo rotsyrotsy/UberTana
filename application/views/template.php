@@ -33,6 +33,8 @@ if (!isset($page) || $page == null) {
   <link href="<?php echo site_url("assets/css/style.css") ?>" rel="stylesheet">
   <link href="<?php echo site_url("assets/css/responsive.css") ?>" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 
 
   <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>
@@ -75,7 +77,7 @@ if (!isset($page) || $page == null) {
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
               </form>
-              <a class="nav-link" href="#">Nom Chauffeur</a>
+              <a class="nav-link" href="<?php echo site_url('profil_chauffeur'); ?>">Nom Chauffeur</a>
             </div>
           </div>
         </nav>
