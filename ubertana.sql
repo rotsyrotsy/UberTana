@@ -63,7 +63,7 @@ CREATE TABLE ClientRequest(
     foreign key (emailPassager) references Passager(email) ON DELETE CASCADE
 );
 
-CREATE SEQUENCE seqPaiement
+CREATE SEQUENCE seqPaiement;
 
 CREATE TABLE DriverProposition(
     IdDrivProp VARCHAR(20) NOT NULL PRIMARY KEY,

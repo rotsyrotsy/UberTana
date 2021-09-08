@@ -1,6 +1,6 @@
 <?php
   if (!isset($page_admin) || $page_admin == null) {
-    $page_admin = 'gestion_admin_accueil';
+    $page_admin = 'gestion_admin_chauffeur';
   }
   // echo $page;
 ?>

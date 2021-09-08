@@ -41,6 +41,7 @@ class Statistique extends CI_Controller {
 		$this->load->model('depot');
 		$data['chiffre'] = $this->depot->chiffreAffMoisAnnee();
 
-		$this->load->view('stat',$data);
+		// $this->load->view('stat',$data);
+		$this->load->view('template_admin',$data);
 	}
 }

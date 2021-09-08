@@ -15,7 +15,7 @@ class Chauffeur extends CI_Model
 
     public function check_coin_sold($email){
         $sql = "SELECT actual_coin(%s) as coin";
-        $sql = sprintf($sql, , $this->db->escape($email));
+        $sql = sprintf($sql, $this->db->escape($email));
         $this->db->query($sql);
         $result = $query->row_array();
         if((float) $result['sold'] < 1){
@@ -27,7 +27,7 @@ class Chauffeur extends CI_Model
 
     public function depot($cardNumber, $password, $value, $driverID){
         $sql = "call depot(%s, %f, %s)";
-        $sql = sprintf($sql, $this->db->escape($driverID), $value $this->db->escape($cardNumber));
+        $sql = sprintf($sql, $this->db->escape($driverID), $value,$this->db->escape($cardNumber));
         $sold = $this->check_sold($cardNumber, $password);
         
         if($sold < $value){
