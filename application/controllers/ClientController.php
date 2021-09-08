@@ -37,7 +37,7 @@ class ClientController extends CI_Controller {
         $this->load->model('passager');
         $passager = $this->passager->getPassagerLogin($idPassager,$mdp);
         if ($passager!=null){
-            if ( $this->session->userdata('passager')==null){
+            if ( $this->session->userdata('passager')==null ){
                 $this->session->set_userdata('passager',$passager);
             }
             $this -> load -> view('mapClient');
@@ -106,7 +106,7 @@ class ClientController extends CI_Controller {
     public function deconnexion(){
         $this->session->sess_destroy();
         $data = array(
-            'page' => 'login'
+            'page' => 'accueil'
         );
         $this -> load -> view('template', $data);
     }

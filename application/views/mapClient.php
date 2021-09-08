@@ -248,6 +248,7 @@ $passager =  $this->session->userdata('passager');
                         <p class="mb-1">Email: <?php echo $propositions[$i]['iddriver']; ?></br>
                           Prix: <?php echo $propositions[$i]['proposition']; ?> coin
                         </p>
+                        <small><?php echo $propositions[$i]['noteChauffeur']; ?></small>
                         <input type="hidden" name="idChauffeur" value="<?php echo $propositions[$i]['iddriver']; ?>">
                         <input type="hidden" name="iddrivprop" value="<?php echo $propositions[$i]['iddrivprop']; ?>">
                         <p><button>Accepter</button></p>
@@ -380,9 +381,6 @@ $passager =  $this->session->userdata('passager');
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
   <script type="text/javascript" src="<?php echo site_url("assets/js/custom.js") ?>"></script>
-  <!-- <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script> -->
-  <!-- <script type="text/javascript" src="assets/js/bootstrap.js"></script> -->
-   <!-- <script type="text/javascript" src="assets/js/custom.js"></script> -->
 
  
 </body>

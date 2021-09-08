@@ -46,7 +46,7 @@ CREATE TABLE Depot(
     foreign key (emailClient) references Client(email) ON DELETE CASCADE
 );
 
-CREATE TABLE Note(
+CREATE TABLE NoteChauffeur(
     emailClient VARCHAR(20),
     emailPassager VARCHAR(20),
     note INTEGER,

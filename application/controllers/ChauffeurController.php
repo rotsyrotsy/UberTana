@@ -105,7 +105,7 @@ class ChauffeurController extends CI_Controller {
     public function deconnexion(){
         $this->session->sess_destroy();
         $data = array(
-            'page' => 'login'
+            'page' => 'accueil'
         );
         $this -> load -> view('template', $data);
     }

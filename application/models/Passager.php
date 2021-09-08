@@ -60,8 +60,9 @@ class Passager extends CI_Model{
 		return $ret;
 	}
 	public function choixChauffeur($idPassager){
-		$sql="SELECT dp.*,c.nom  FROM driverProposition dp join client c
-		on dp.idDriver=c.email where dp.idClient='%s' and dp.statue=0";
+		$sql="SELECT dp.*,c.nom,nc.note  FROM driverProposition dp join client c
+		on dp.idDriver=c.email where dp.idClient='%s' and dp.statue=0
+		join noteChauffeur nc on nc.emailClient=dc.idDriver";
         $sql=sprintf($sql,$idPassager);
         $query=$this->db->query($sql);
         $i=0;
