@@ -80,7 +80,6 @@ $passager =  $this->session->userdata('passager');
             destLatitude: lat[1],
             destLongitude: lng[1]
           },
-          dataType: 'json',
           success: function(response) {
             $('#verif').append(
               "<div class='alert alert-success' role='alert'>" +
@@ -234,6 +233,10 @@ $passager =  $this->session->userdata('passager');
               <div class="alert alert-success" role="alert">
                 <?php echo $matchReussi; ?>
               </div>
+              <?php }else if(isset($matchNon)){ ?>
+                <div class="alert alert-warning" role="alert">
+                  <?php echo $matchNon; ?>
+                </div>
               <?php } else {
               if (isset($propositions)) {  ?>
 
@@ -248,7 +251,7 @@ $passager =  $this->session->userdata('passager');
                         <p class="mb-1">Email: <?php echo $propositions[$i]['iddriver']; ?></br>
                           Prix: <?php echo $propositions[$i]['proposition']; ?> coin
                         </p>
-                        <small><?php echo $propositions[$i]['noteChauffeur']; ?></small>
+                        <small>Note moyenne: <?php echo round($propositions[$i]['moyennenote'],2); ?></small>
                         <input type="hidden" name="idChauffeur" value="<?php echo $propositions[$i]['iddriver']; ?>">
                         <input type="hidden" name="iddrivprop" value="<?php echo $propositions[$i]['iddrivprop']; ?>">
                         <p><button>Accepter</button></p>

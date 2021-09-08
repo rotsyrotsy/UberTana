@@ -55,7 +55,7 @@
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link " href="#">Accueil <span class="sr-only">(current)</span></a>
+                  <a class="nav-link " href="<?php echo site_url('Accueil/index'); ?>">Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="<?php echo site_url("Accueil/guide"); ?>">

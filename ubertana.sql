@@ -26,8 +26,7 @@ CREATE TABLE Client(
     numTel VARCHAR(30),
     nationalite VARCHAR(20),
     dtn DATE,
-    sexe varchar(2),
-    soldeInit DOUBLE PRECISION
+    sexe varchar(2)
 );
 
 CREATE TABLE Paiement(
@@ -45,6 +44,7 @@ CREATE TABLE Depot(
     date_heure TIMESTAMP,
     foreign key (emailClient) references Client(email) ON DELETE CASCADE
 );
+insert into 
 
 CREATE TABLE NoteChauffeur(
     emailClient VARCHAR(20),
@@ -52,6 +52,10 @@ CREATE TABLE NoteChauffeur(
     note INTEGER,
     foreign key (emailClient) references Client(email) ON DELETE CASCADE,
     foreign key (emailPassager) references Passager(email) ON DELETE CASCADE
+);
+
+create view noteParChauffeur as(
+    select emailClient, avg(note) as moyenneNote from noteChauffeur group by emailClient
 );
 
 

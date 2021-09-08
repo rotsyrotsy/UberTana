@@ -48,7 +48,7 @@ class Client extends CI_Model{
 		}
 	}
 	public function insertChauffeur($email,$nom,$prenom, $modele, $matricule , $mdp,$numtel, $nationalite, $dtn,$sexe){
-		$query = "INSERT INTO Client (email,nom,prenom, modele, matricule , mdp,numtel, nationalite, dtn,sexe, soldeinit) VALUES('%s','%s','%s','%s', '%s', '%s','%s','%s','%s','%s',5 )";
+		$query = "INSERT INTO Client (email,nom,prenom, modele, matricule , mdp,numtel, nationalite, dtn,sexe, soldeinit) VALUES('%s','%s','%s','%s', '%s', '%s','%s','%s','%s','%s' )";
 		$query = sprintf($query,$email,$nom,$prenom, $modele, $matricule , $mdp,$numtel, $nationalite, $dtn,$sexe);
 		// var_dump($query);
 		$this->db->query($query);
@@ -78,5 +78,65 @@ class Client extends CI_Model{
 		$query = sprintf($query,$idChauffeur,$idPassager,$proposition);
 		$this->db->query($query);
 	}
+
+	public function checkout($email,$value)
+    {
+        $sql = "insert into paiement values(nextval('seqPaiement'),'".$email."',".$value.",NOW())";
+        $checker = $this->client->check_coin_sold($email);
+        if(!$checker){
+			return false;
+            // throw new Exception("Niveau de coin insuffisant!!");
+        }
+        $this->db->query($sql);
+		return true;
+    } 
+
+	public function getActualCoin($email){
+		$sql = "SELECT actual_coin(%s) as coin";
+        $sql = sprintf($sql, $this->db->escape($email));
+		$result = $this->db->query($sql);
+		$client = array();
+		foreach ($result->result_array() as $key) {
+			$client[] = $key;
+		}
+		return $client[0];
+	}
+
+    public function check_coin_sold($email){
+        $sql = "SELECT actual_coin(%s) as coin";
+        $sql = sprintf($sql, $this->db->escape($email));
+        $query = $this->db->query($sql);
+        $result = $query->row_array();
+        if((float) $result['coin'] < 1){
+            return false;
+        }
+        return true;
+    }
+
+
+    public function depot($cardNumber, $password, $value, $driverID){
+        $sql = "call depot(%s, %f, %s)";
+        $sql = sprintf($sql, $this->db->escape($driverID), $value, $this->db->escape($cardNumber));
+        $sold = $this->client->check_sold($cardNumber, $password);
+        
+        if($sold < $value){
+            throw new Exception('sold insuffisant !!');
+        } 
+
+        $this->db->query($sql);
+
+    }
+
+    public function check_sold($cardNumber, $password){
+        $sql = "SELECT sold from BANKACCOUNT where cardNumber = %s and password = sha256(%s)";
+        $sql = sprintf($sql, $this->db->escape($cardNumber), $this->db->escape($password));
+        $query = $this->db->query($sql);
+        $result = $query->row_array();
+        if($result == null){
+            throw new Exception('erreur de compte !!');
+        } else {
+            return (float) $result['sold'];
+        }
+    }
 
 }

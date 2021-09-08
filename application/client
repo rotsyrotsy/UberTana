@@ -1,1 +1,8 @@
-[]
+[{
+    "idPassager": "rafa.rotsy@gmail.com",
+    "nom": "Rotsy",
+    "latitude": -18.98573130054736,
+    "longitude": 47.53246629142975,
+    "destLat": -18.98560194940944,
+    "destLng": 47.53290080929016
+}]

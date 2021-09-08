@@ -56,12 +56,13 @@ class ClientController extends CI_Controller {
         $destLng = $this->input->post('destLongitude');
         $passager=$this->session->userdata('passager');
         $idPassager=$passager['email'];
+        $nom = $passager['nom'];
 
         $clientFile=APPPATH.'client';
         $this->load->model('json');
-        $this->json->insertInFileClient($clientFile, $idPassager, $lat, $lng, $destLat, $destLng);
+        $this->json->insertInFileClient($clientFile, $idPassager, $lat, $lng, $destLat, $destLng,$nom);
         $txt="Vos coordonnées ont été envoyé";
-        echo json_encode($txt);
+        echo ($txt);
     }
     public function choisirChauffeur(){
         $passager = $this->session->userdata('passager');
@@ -84,22 +85,29 @@ class ClientController extends CI_Controller {
         $idPassager = $passager['email'];
         $iddrivprop = $this->input->post('iddrivprop');
 
-        //transaction paiement
-        $this->load->model('match');
-        $this->match->matching($idChauffeur, $idPassager);  //match
-        $this->match->deleteDriverProposition($iddrivprop); // mi accepter an'ny proposition anle chauffeur
-
-        $clientFile=APPPATH.'client';   
-        $this->match->deleteFromClientFile($clientFile,$idPassager); // mamafa anle position anle client tam demande
-
-        $this->match->notMatch($idPassager); //mamafa ny propositions an'ny chauffeurs hafa
-
-        $chauffeurFile=APPPATH.'chauffeur';
-        $this->match->deleteFromDriverFile($chauffeurFile, $idChauffeur); // mamafa anle position anle chauffeur 
-
-
         $data=array();
-        $data['matchReussi']="Merci de votre participation, votre chauffeur arrivera bientot";
+            $this->load->model('client');
+            //transaction paiement
+            $check = $this->client->checkout($idChauffeur, 1);
+            if ($check==true){
+                $this->load->model('match');
+                $this->match->matching($idChauffeur, $idPassager);  //match
+                $this->match->deleteDriverProposition($iddrivprop); // mi accepter an'ny proposition anle chauffeur
+        
+                $clientFile=APPPATH.'client';   
+                $this->match->deleteFromClientFile($clientFile,$idPassager); // mamafa anle position anle client tam demande
+        
+                $this->match->notMatch($idPassager); //mamafa ny propositions an'ny chauffeurs hafa
+        
+                // $chauffeurFile=APPPATH.'chauffeur';
+                // $this->match->deleteFromDriverFile($chauffeurFile, $idChauffeur); // mamafa anle position anle chauffeur 
+        
+        
+                $data['matchReussi']="Merci de votre participation, votre chauffeur arrivera bientot";
+            }else{
+                $data['matchNon']="Niveau de coin insuffisant";
+            }
+           
         $this->load->view('mapClient',$data);
 
     }

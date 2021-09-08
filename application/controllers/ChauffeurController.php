@@ -39,9 +39,12 @@ class ChauffeurController extends CI_Controller {
         $mdp = $this->input->post('mdp');
         $this->load->model('client');
         $chauffeur = $this->client->getChauffeurLogin($idChauffeur,$mdp);
+        $coin = $this->client->getActualCoin($idChauffeur);
+
         if ($chauffeur!=null){
             if ( $this->session->userdata('chauffeur')==null){
                 $this->session->set_userdata('chauffeur',$chauffeur);
+                $this->session->set_userdata('coin',$coin);
             }
             $this -> load -> view('mapChauffeur');
         }else{
