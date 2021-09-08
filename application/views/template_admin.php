@@ -1,6 +1,6 @@
 <?php
   if (!isset($page_admin) || $page_admin == null) {
-    $page_admin = 'gestion_admin_accueil';
+    $page_admin = 'gestion_admin_chauffeur';
   }
   // echo $page;
 ?>
@@ -72,9 +72,9 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Modification:</h6>
-                        <a class="collapse-item" href="<?php echo site_url("Accueil/gestion_chauffeur"); ?>">Chauffeur</a>
-                        <a class="collapse-item" href="<?php echo site_url("Accueil/gestion_client"); ?>">Client</a>
-                        <a class="collapse-item" href="<?php echo site_url("Accueil/gestion_coin"); ?>">Coin</a>
+                        <a class="collapse-item" href="<?php echo site_url("admin/gestion_chauffeur"); ?>">Chauffeur</a>
+                        <a class="collapse-item" href="<?php echo site_url("admin/gestion_client"); ?>">Client</a>
+                        <a class="collapse-item" href="<?php echo site_url("admin/gestion_coin"); ?>">Coin</a>
                     </div>
                 </div>
             </li>
@@ -328,7 +328,7 @@
     <script>
                 var mois = <?php echo json_encode($mois); ?>;
                 var valeur = <?php echo json_encode($valeur); ?>;
-                var ctx = document.getElementById('myAreaChart');
+                var ctx = document.getElementById('myChart');
 
                 var myChart = new Chart(ctx, {
                     type: 'line',
@@ -338,7 +338,7 @@
                             label: 'Chiffre',
                             data: valeur,
                             backgroundColor: 
-                                'blue',
+                                '#4e73df',
 
                             borderColor: 
                                 'rgba(153, 102, 235, 1)',

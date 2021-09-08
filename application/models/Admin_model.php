@@ -48,16 +48,17 @@ class Admin_model extends CI_Model{
 
 	
 	public function getDriverNote(){
-		$query = $this->db->query('SELECT * FROM NDriverNote GROUP BY note');
+		$query = $this->db->query('SELECT  email,nom,avg(note) as note FROM NDriverNote GROUP BY email,nom');
 		$note = array();
 		foreach ($query->result_array() as $key) {
 			$note[] = $key;
 		}
 		return $note;
 	}
+
 	public function getPassengerNote()
 	{
-		$query = 'SELECT * FROM NPassagerNote GROUP BY note';
+		$query = 'SELECT email,nom,avg(note) as note FROM NPassagerNote GROUP BY nom,email';
 		echo $query;
 		$query = $this->db->query($query);
 		$driverNote = array();
@@ -65,6 +66,14 @@ class Admin_model extends CI_Model{
 			$driverNote[] = $row;
 					}
 		return $driverNote ;
+	}
+
+	public function getConfig()
+	{
+		$query = "SELECT * FROM CONFIG";
+		$query =$this->db->query($query);
+		$config = $query->row_array();
+		return $config;
 	}
 }
 ?>
