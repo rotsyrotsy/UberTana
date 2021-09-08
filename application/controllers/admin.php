@@ -35,7 +35,7 @@
 		{	
 			$coin = $this->input->post('coin');
 			$ariary = $this->input->post('ariary');
-			$this->admin_model->updateConfig($ariary,$coin);
+			$this->admin->updateConfig($ariary,$coin);
 			$this->getListNoteDriver();
 		}
 	}
