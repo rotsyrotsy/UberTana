@@ -10,38 +10,33 @@ class Passager extends CI_Model{
 		}
 		return $passager;
 	}
+	public function insertPassager($email,$nom,$mdp){
+		$query = "INSERT INTO Passager VALUES ('%s','%s','%s')";
+		$this->db->query(sprintf($query,$email,$nom,$mdp));
+
+	}
+	public function getPassagerLogin($mail, $mdp){
+		$query = "SELECT * FROM Passager where email='%s' and  mdp='%s'";
+		$result = $this->db->query(sprintf($query,$mail,$mdp));
+		$passager = array();
+		foreach ($result->result_array() as $key) {
+			$passager[] = $key;
+		}
+		if (count($passager)>0){
+			return $passager[0];
+		}else{
+			return null;
+		}
+	}
 	public function getPassagerById($mail){
-		$query = $this->db->query("SELECT * FROM Passager where email='%s'");
-		$result = $this->db->query(sprintf($query,$mail));
-		$passager = array();
-		foreach ($query->result_array() as $key) {
-			$passager[] = $key;
-		}
-		return $passager[0];
-	}
-	public function getListDriver($rayon){
-		$query = "SELECT * FROM Client WHERE  = '%s' ";
-		$result = $this->db->query(sprintf($query,$rayon));
-		$passager = array();
+		$query = "SELECT * FROM Passager where email='%s'";
+		$query = sprintf($query,$mail);
+		$result = $this->db->query($query);
+		$client = array();
 		foreach ($result->result_array() as $key) {
-			$passager[] = $key;
+			$client[] = $key;
 		}
-		return $passager;
-	}
-
-	public function getDriver($emailDriver){
-		$query = "SELECT * FROM Client WHERE email = '%s' ";
-		$result = $this->db->query(sprintf($query,$emailDriver));
-		$passager = array();
-		foreach ($result->result_array() as $key) {
-			$passager[] = $key;
-		}
-		return $passager;
-	}
-
-	public function setDemande($emailDriver,$emailPassager){
-		$query = "INSERT INTO Demande VALUES ('%s','%s',NOW())";
-		$result = $this->db->query(sprintf($query,$emailPassager,$emailDriver));
+		return $client[0];
 	}
 
 	public function getProximite1km($tab, $lat, $long){
@@ -64,8 +59,19 @@ class Passager extends CI_Model{
 		}
 		return $ret;
 	}
-	// public function setDemande($emailDriver,$emailPassager,$note){
-	// 	$query = "INSERT INTO Demande VALUES ('%s','%s',%s)";
-	// 	$result = $this->db->query(sprintf($query,$emailDriver,$emailPassager,$note));
-	// }
+	public function choixChauffeur($idPassager){
+		$sql="SELECT dp.*,c.nom  FROM driverProposition dp join client c
+		on dp.idDriver=c.email where dp.idClient='%s' and dp.statue=0";
+        $sql=sprintf($sql,$idPassager);
+        $query=$this->db->query($sql);
+        $i=0;
+		$val = null;
+        foreach($query->result_array() as $row){
+            foreach ($row as $key => $value) {
+                $val[$i][$key]=$value;
+            }
+            $i++;
+        }
+        return $val;
+	}
 }

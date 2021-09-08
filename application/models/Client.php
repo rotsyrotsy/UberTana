@@ -10,5 +10,59 @@ class Client extends CI_Model{
 		}
 		return $client;
 	}
+	public function getClientByIdChauffeur($mail){
+		$query = "SELECT * FROM Client where email='%s'";
+		$query = sprintf($query,$mail);
+		$result = $this->db->query($query);
+		$client = array();
+		foreach ($result->result_array() as $key) {
+			$client[] = $key;
+		}
+		return $client[0];
+	}
+	public function getChauffeurLogin($mail, $mdp){
+		$query = "SELECT * FROM Client where email='%s' and  mdp='%s'";
+		$query = sprintf($query,$mail,$mdp);
+		// var_dump($query);
+		$result = $this->db->query($query);
+		$chauffeur = array();
+		foreach ($result->result_array() as $key) {
+			$chauffeur[] = $key;
+		}
+		if (count($chauffeur)>0){
+			return $chauffeur[0];
+		}else{
+			return null;
+		}
+	}
+	public function insertChauffeur($mail, $mdp){
+		$query = "INSERT INTO Client (email,mdp) VALUES('%s','%s')";
+		$this->db->query(sprintf($query,$mail,$mdp));
+	}
+	public function getProximite1km($tab, $lat, $long){
+		$XLatitude=0.009;
+		$cosinusLong=cos(deg2rad($lat));
+		$UnLongitude=111.11*$cosinusLong;
+		$XLongitude=2/$UnLongitude;
+		
+		$XLatitude1= $lat-$XLatitude;
+		$XLatitude2= $lat+$XLatitude;
+		
+		$XLongitude1=$long-$XLongitude;
+		$XLongitude2=$long+$XLongitude;
+
+		$ret = [];
+		for ($i=0; $i<count($tab); $i++){
+			if ($tab[$i]['longitude']> $XLongitude1 && $tab[$i]['longitude']<= $XLongitude2 && $tab[$i]['latitude']> $XLatitude1 && $tab[$i]['latitude']<= $XLatitude2) {
+				array_push($ret,$tab[$i]);
+			}
+		}
+		return $ret;
+	}
+	public function proposerPrix($idChauffeur,$idPassager,$proposition){
+		$query = "INSERT INTO DriverProposition VALUES ('DP' || nextval('seqDriverProposition'),'%s','%s',%d,0, NOW());";
+		$query = sprintf($query,$idChauffeur,$idPassager,$proposition);
+		$this->db->query($query);
+	}
 
 }

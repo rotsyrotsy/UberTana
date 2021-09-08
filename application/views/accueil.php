@@ -29,58 +29,7 @@
             </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6 px-0">
-                <div class="img-box">
-                  <img src="<?php echo site_url("assets/images/taxi_lantern.jfif") ?>" alt="" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="detail-box">
-                  <h1>
-                    Design
-                    <br />
-                    Agency
-                  </h1>
-                  <p>
-                    There are many variations of passages of Lorem Ipsum available, but the
-                  </p>
-                  <a href="">
-                    Contact Us
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6 px-0">
-                <div class="img-box">
-                  <img src="<?php echo site_url("assets/images/Antananarivo, Madagascar 🇲🇬 (2).jfif") ?>" alt="" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="detail-box">
-                  <h1>
-                    Design
-                    <br />
-                    Agency
-                  </h1>
-                  <p>
-                    There are many variations of passages of Lorem Ipsum available, but the
-                  </p>
-                  <a href="">
-                    Contact Us
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
       <div class="carousel_btn-box">
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

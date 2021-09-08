@@ -51,8 +51,8 @@
                     </div>
                 </div>
             </div>
-            
-
+            <div><?php if(isset($errorLoginDriver)){ echo $errorLoginDriver; } ?></div>
+          </form>
         </div>
         <p></p>
         <center><a href="<?php echo site_url('Inscription/index')?>">Pas encore membre ? Inscrivez-vous</a></center>
