@@ -367,14 +367,7 @@
                                     </div>
                                 </div>
                                 <!-- Card Body -->
-                                <?php if(ISSET($chiffre)){
-                                    $nom = array();
-                                    $note = array();
-                                    for ($i=0; $i < count($chiffre) ; $i++) { 
-                                        $mois[$i] = $chiffre[$i]['mois'];
-                                        $valeur[$i] = $chiffre[$i]['valeur'];
-                                        
-                                } ?>
+                               
                                 <div class="card-body">
                                     <div class="chart-area">
                                         <canvas id="myAreaChart"></canvas>
@@ -489,10 +482,18 @@
     <!-- Page level custom scripts -->
     <script src="<?php echo site_url("assets/js/demo/chart-area-demo.js") ?>"></script>
     <script src="<?php echo site_url("assets/js/demo/chart-pie-demo.js") ?>"></script>
+    <?php if(ISSET($chiffre)){
+			$nom = array();
+			$note = array();
+			for ($i=0; $i < count($chiffre) ; $i++) { 
+			    $mois[$i] = $chiffre[$i]['mois'];
+			    $valeur[$i] = $chiffre[$i]['valeur'];
+			    
+		} ?>
     <script>
                 var mois = <?php echo json_encode($mois); ?>;
                 var valeur = <?php echo json_encode($valeur); ?>;
-                var ctx = document.getElementById('myChart');
+                var ctx = document.getElementById('myAreaChart');
 
                 var myChart = new Chart(ctx, {
                     type: 'line',
@@ -502,7 +503,7 @@
                             label: 'Chiffre',
                             data: valeur,
                             backgroundColor: 
-                                '#FFB6C1',
+                                'blue',
 
                             borderColor: 
                                 'rgba(153, 102, 235, 1)',
@@ -521,7 +522,7 @@
                     	}
                 });
 			</script>
-
+    <?php }?>
 </body>
 
 </html>
