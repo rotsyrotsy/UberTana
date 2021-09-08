@@ -29,9 +29,9 @@ class Admin_model extends CI_Model{
         return 0;
 	}
 	
-	public function updateConfig($ariary,$coin){
-		$sql = "UPDATE CONFIG SET ariary= %s, coin= %s";
-		$sql = sprintf($sql,$this->db->escape($ariary),$this->db->escape($coin));
+	public function updateConfig($ariary){
+		$sql = "update config set ariary = %s";
+		$sql = sprintf($sql,$this->db->escape($ariary));
 		$this->db->query($sql);
 	}
 

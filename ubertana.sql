@@ -247,3 +247,21 @@ CREATE OR REPLACE FUNCTION turnoverIn(year integer) returns table(mois text, val
                 group by extract(month from date_heure);
         END;
 $$ LANGUAGE plpgsql;
+
+
+-- moyenne chiffreAffaire par annee
+
+
+create or replace function moyenneCAAnnee(year integer) returns DOUBLE PRECISION as $$
+	declare 
+		ariaryConfig DOUBLE PRECISION;
+		adding DOUBLE PRECISION;
+		moyCA DOUBLE PRECISION;
+	begin
+		select into ariaryConfig ariary from config limit 1;
+		select into adding sum(depot.valeur)*ariaryConfig as moyenne from depot
+		where extract(year from date_heure) = year;
+		select into moyCA avg(adding);
+		return moyCA;
+	end;
+$$ language plpgsql;

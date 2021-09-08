@@ -14,8 +14,9 @@
         public function index(){
 
             $this->load->model('depot');
-		    $data['chiffre'] = $this->depot->chiffreAffMoisAnnee();
-            
+		    $data['chiffre'] = $this->depot->chiffreAffMoisAnnee($annee);
+		    $data['moyenne'] = $this->depot->moyenneCAAnnee($annee);
+            $data['page_admin'] = 'gestion_admin_accueil';
             $this->load->view('template_admin',$data);
             // $this->load->view('template_admin');
 
@@ -49,21 +50,32 @@
 		// }
 		public function delete_Client()
 		{
-			$this->admin->deleteClient($email);
-			$this->getListNoteDriver();
+			$email = $this->input->get('email');
+			$this->admin_model->deleteClient($email);
+			$data['page_admin'] = 'gestion_admin_chauffeur';
+			$data['note'] = $this->admin_model->getDriverNote();
+			$this->load->view('template_admin',$data);
+			// $this->getListNoteDriver();
 		}
-		// public function delete_Passenger($email)
-		// {
-		// 	$this->admin->deletePassenger($email);
-		// 	$this->getListNotePassenger();
-		// }
+		public function delete_Passenger()
+		{
+			$email = $this->input->get('email');
+			$this->admin_model->deletePassenger($email);
+			$data['page_admin'] = 'gestion_admin_client';
+			$data['note'] = $this->admin_model->getPassengerNote();
+			$this->load->view('template_admin',$data);
+		}
 		public function updateConfig()
 		{	
-			$coin = $this->input->post('coin');
+			$data['page_admin'] = 'gestion_admin_coin';
 			$ariary = $this->input->post('ariary');
-			$this->admin_model->updateConfig($ariary,$coin);
-			$this->getListNoteDriver();
+			$this->admin_model->updateConfig($ariary);
+			$data['coin'] = $this->admin_model->getConfig();
+			$data['message'] = "Mise à jour effectuée";
+			$this->load->view('template_admin',$data);
+			// $this->gestion_coin();
 		}
+	
 		// public function getConfigCoin()
 		// {
 		// 	$data['configuration'] = $this->admin->getConfig();

@@ -30,7 +30,7 @@
                       <tr>
                           <td><a href="#"><?php echo $note[$i]['nom'];?></a></td>
                           <td><?php echo $note[$i]['note'];?></td>
-                          <td><a href="#"><i class="fas fa-bell fa-trash"></i> </a></td>
+                          <td><a href="<?php echo site_url("Admin/delete_Passenger?email=".$note[$i]['email']."") ?>"><i class="fas fa-bell fa-trash"></i> </a></td>
                           
                       </tr>
                     <?php }?>  

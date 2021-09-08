@@ -1,6 +1,6 @@
 <?php
   if (!isset($page_admin) || $page_admin == null) {
-    $page_admin = 'gestion_admin_chauffeur';
+    $page_admin = 'gestion_admin_accueil';
   }
   // echo $page;
 ?>
@@ -49,7 +49,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?php echo site_url("admin/index"); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -87,7 +87,7 @@
             </div>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?php echo site_url("admin/index"); ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Statistiques</span></a>
             </li>
