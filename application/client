@@ -1,15 +1,8 @@
 [{
     "idPassager": "rafa.rotsy@gmail.com",
     "nom": "Rotsy",
-    "latitude": -18.98573130054736,
-    "longitude": 47.53246629142975,
-    "destLat": -18.98560194940944,
-    "destLng": 47.53290080929016
-},{
-    "idPassager": "p1@gmail.com",
-    "nom": "Pop",
-    "latitude": -18.9864390232328,
-    "longitude": 47.53266917462195,
-    "destLat": -18.985964737251518,
-    "destLng": 47.5330017685398
+    "latitude": -18.985819825906884,
+    "longitude": 47.53285789394592,
+    "destLat": -18.986420926596523,
+    "destLng": 47.532710372450104
 }]

@@ -117,7 +117,7 @@ class Client extends CI_Model{
         $sql = "call depot(%s, %f, %s)";
         $sql = sprintf($sql, $this->db->escape($driverID), $value, $this->db->escape($cardNumber));
         $sold = $this->client->check_sold($cardNumber, $password);
-        
+        // var_dump($value, $sold);
         if($sold < $value){
 			return false;
             //throw new Exception('sold insuffisant !!');

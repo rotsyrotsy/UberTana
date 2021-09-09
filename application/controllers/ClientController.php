@@ -112,7 +112,7 @@ class ClientController extends CI_Controller {
         
                 $data['matchReussi']="Merci de votre participation, votre chauffeur arrivera bientot";
             }else{
-                $data['matchNon']="Niveau de coin insuffisant";
+                $data['matchNon']="Niveau de coin du chauffeur insuffisant";
             }
            
         $this->load->view('mapClient',$data);
