@@ -13,82 +13,31 @@
               </div>
               <div class="col-md-6">
                 <div class="detail-box">
-                  <h1>
-                    Design
+                <h1>
+                    Uber
                     <br />
-                    Agency
+                    Tana
                   </h1>
                   <p>
-                    There are many variations of passages of Lorem Ipsum available, but the
+                    Préférez le confort du covoiturage aux autres moyens de transport
                   </p>
                   <a href="">
-                    Contact Us
+                    Contactez-nous
                   </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6 px-0">
-                <div class="img-box">
-                  <img src="<?php echo site_url("assets/images/taxi_lantern.jfif") ?>" alt="" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="detail-box">
-                  <h1>
-                    Design
-                    <br />
-                    Agency
-                  </h1>
-                  <p>
-                    There are many variations of passages of Lorem Ipsum available, but the
-                  </p>
-                  <a href="">
-                    Contact Us
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6 px-0">
-                <div class="img-box">
-                  <img src="<?php echo site_url("assets/images/Antananarivo, Madagascar 🇲🇬 (2).jfif") ?>" alt="" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="detail-box">
-                  <h1>
-                    Design
-                    <br />
-                    Agency
-                  </h1>
-                  <p>
-                    There are many variations of passages of Lorem Ipsum available, but the
-                  </p>
-                  <a href="">
-                    Contact Us
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
       <div class="carousel_btn-box">
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="sr-only">Previous</span>
+          <span class="sr-only">Precedent</span>
         </a>
         <img src="<?php echo site_url("assets/images/line.png") ?>" alt="" />
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="sr-only">Next</span>
+          <span class="sr-only">Suivant</span>
         </a>
       </div>
     </div>
@@ -107,14 +56,14 @@
               Projet
             </h2>
             <p>
-              Changez la façon dont vous et vos collaborateurs se déplacent
+              Changez la façon dont vous vous déplacez
             </p>
           </div>
         </div>
       </div>
       <div class="col-md-4 offset-md-1">
         <div class="btn-box">
-          <a href="">
+          <a href="<?php echo site_url("Accueil/guide"); ?>">
             Savoir Comment
           </a>
         </div>
@@ -128,12 +77,15 @@
     <div class="box ">
       <div class="detail-box">
         <div class="heading_container">
-          <h2>
+        <h2>
             A Propos de <span>Uber</span> Tana
           </h2>
         </div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        Uber Tana a pour but de mettre en contact les passagers avec des conducteurs réalisant 
+        des services de transport pour une amélioration du cadre des transports dans la capitale de 
+        Madagascar, d’où son nom. Elle offre plus de securite au deplacement grace a la localisation
+        du point de depart et de la destination de trajet. 
         </p>
         <a href="">
           Voir Plus

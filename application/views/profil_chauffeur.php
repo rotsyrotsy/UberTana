@@ -1,3 +1,11 @@
+<?php 
+$chauffeur = null;
+  if ($this->session->userdata('chauffeur')==null){
+    redirect(site_url());
+  }else{
+    $chauffeur =  $this->session->userdata('chauffeur');
+  }
+?>
 <style>
     .titre {
         margin-top: 30px;
@@ -17,11 +25,11 @@
             <hr style='margin-top: 0;'>
             <div>
                 <label>Email : </label>
-                <input value='qulqch@email.com'>
+                <input value='<?php echo $chauffeur['email']; ?>'>
             </div>
             <div>
                 <label>Téléphone : </label>
-                <input value='+261 32 29 614 99'>
+                <input value='<?php echo $chauffeur['numtel']; ?>'>
             </div>
             <div id='personnelles_panel'>
                 <div style='display: flex; justify-content: space-between;' class='titre'>
@@ -29,11 +37,11 @@
                     <a href='#' id='bt_modif_personnelles'><i class='bi bi-pencil-square'></i></a>
                 </div>
                 <hr style='margin-top: 0;'>
-                <p>Nom : <span class='info'>Rabesandratana</span></p>
-                <p>Prénom : <span class='info'>Eric</span></p>
-                <p>Date de naissance : <span class='info'>18 Février 1992</span></p>
-                <p>Sexe : <span class='info'>Homme</span></p>
-                <p>Nationalité : <span class='info'>Malagasy</span></p>
+                <p>Nom : <span class='info'><?php echo $chauffeur['nom']; ?></span></p>
+                <p>Prénom : <span class='info'><?php echo $chauffeur['prenom']; ?></span></p>
+                <p>Date de naissance : <span class='info'><?php echo $chauffeur['dtn']; ?></span></p>
+                <p>Sexe : <span class='info'><?php echo $chauffeur['sexe']; ?></span></p>
+                <p>Nationalité : <span class='info'><?php echo $chauffeur['nationalite']; ?></span></p>
             </div>
             <div id="voiture_panel">
                 <div style='display: flex; justify-content: space-between;' class='titre'>
@@ -41,8 +49,8 @@
                     <a href='#' id='bt_modif_voiture'><i class='bi bi-pencil-square'></i></a>
                 </div>
                 <hr style='margin-top: 0;'>
-                <p>Modèle : <span class='info'>Ford K</span></p>
-                <p>Matricule : <span class='info'>4556 TV</span></p>
+                <p>Modèle : <span class='info'><?php echo $chauffeur['modele']; ?></span></p>
+                <p>Matricule : <span class='info'><?php echo $chauffeur['matricule']; ?></span></p>
             </div>
 
             <div style='display: flex; justify-content: space-between;' class='titre'>

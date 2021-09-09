@@ -29,19 +29,20 @@
                 <div class="col-md-12">
                     <div class="" style="">
                         <div style="">
-                            <form action="">
+                            <form action="<?php echo base_url('ClientController/login'); ?>" method="post">
                                 <h2>Client</h2>
                                 <div>
-                                    <input style="color: white; border-color: lightgray;" id="champ_email_client" type="email" placeholder="Email" />
+                                    <input id="champ_email_client" name="idPassager" type="email" placeholder="Email" />
                                 </div>
                                 <div>
-                                    <input style="color: white; border-color: lightgray;" id="champ_mdp_client" type="password" placeholder="Mot de passe" />
+                                    <input id="champ_mdp_client" name="mdp" type="password" placeholder="Mot de passe" />
                                 </div>
                                 <div class="d-flex ">
                                     <button id="bt_connect_client">
                                         SE CONNECTER
                                     </button>
                                 </div>
+                                <div><?php if(isset($errorLogin)){ echo $errorLogin; } ?></div>
                             </form>
                         </div>
                     </div>
@@ -54,28 +55,30 @@
                 <div class="col-md-12">
                     <div class="" style="">
                         <div style="">
-                            <form action="">
+                            <form action="<?php echo base_url('ChauffeurController/login'); ?>" method="post">
                                 <h2>Chauffeur</h2>
                                 <div>
-                                    <input style="border-color: lightgray; color:white" id="champ_email_client" type="email" placeholder="Email" />
+                                    <input id="champ_email_client" name="idChauffeur" type="email" placeholder="Email" />
                                 </div>
                                 <div>
-                                    <input style="border-color: lightgray; color:white" id="champ_mdp_client" type="password" placeholder="Mot de passe" />
+                                    <input id="champ_mdp_client" name="mdp" type="password" placeholder="Mot de passe" />
                                 </div>
                                 <div class="d-flex ">
                                     <button id="bt_connect_chauffeur">
                                         SE CONNECTER
                                     </button>
                                 </div>
+                                <div><?php if(isset($errorLoginDriver)){ echo $errorLoginDriver; } ?></div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <center><a href="<?php echo site_url('Inscription/index')?>">Pas encore membre ? Inscrivez-vous</a></center>
+          </form>
         </div>
         <p></p>
+        <center><a href="<?php echo site_url('Accueil/index')?>">Pas encore membre ? Inscrivez-vous</a></center>
     </div>
 </section>
 <script>

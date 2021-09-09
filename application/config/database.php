@@ -79,7 +79,7 @@ $db['default'] = array(
 	'username' => 'postgres',
 	'password' => 'mdpProm13',
 	'database' => 'ubertana',
-	'dbdriver' => 'postgre', //ou postgre
+	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
