@@ -158,7 +158,7 @@ $passager =  $this->session->userdata('passager');
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="index.html">
-            <img src="<?php echo site_url("assets/images/logo.png") ?>" alt="" />
+          <img src="<?php echo site_url("assets/images/uberfinal-removebg-preview.png") ?>" alt="" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -364,7 +364,7 @@ $passager =  $this->session->userdata('passager');
   <script type="text/javascript" src="<?php echo site_url("assets/js/bootstrap.js") ?>"></script>
   <script type="text/javascript" src="<?php echo site_url("assets/js/owl.carousel.min.js") ?>"></script>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 
   <script type="text/javascript" src="<?php echo site_url("assets/js/custom.js") ?>"></script>
 

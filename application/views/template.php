@@ -45,7 +45,7 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="#">
-            <img src="<?php echo site_url("assets/images/logo.png") ?>" alt="" />
+            <img src="<?php echo site_url("assets/images/uberfinal-removebg-preview.png") ?>" alt="" />
           </a>
           <button style="background-color: rgba(255,255,255,0.25);" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
