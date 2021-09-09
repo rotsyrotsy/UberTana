@@ -19,7 +19,7 @@
                     Tana
                   </h1>
                   <p>
-                    Préfériez le confort du covoiturage aux autres moyens de transport
+                    Préférez le confort du covoiturage aux autres moyens de transport
                   </p>
                   <a href="">
                     Contactez-nous
