@@ -215,11 +215,16 @@
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="<?php echo site_url('ChauffeurController/index'); ?>">Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     Guide
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?php echo site_url('ChauffeurController/achatCoin'); ?>">
+                    Dépôt
                   </a>
                 </li>
                 <li class="nav-item">
@@ -252,8 +257,10 @@
   <!-- end hero area -->
 
 
-
-  <section class="contact_section layout_padding-bottom layout_padding2-top">
+  <?php if (isset($page)){ 
+    include($page.".php");
+  } else { ?>
+    <section class="contact_section layout_padding-bottom layout_padding2-top">
     <div class="container px-0">
       <div class="heading_container">
         <h2 class="">
@@ -320,6 +327,9 @@
       </div>
     </div>
   </section>
+  <?php } ?>
+  
+  
 
   <section class="info_section  layout_padding2-top">
     <div class="social_container">

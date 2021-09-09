@@ -29,7 +29,7 @@ class Accueil extends CI_Controller {
 			);
 		}
         $this->load->helper('Date');
-        $this->load->view('template.php', $data);
+        $this->load->view('template', $data);
     }
     public function client(){
         $data['page'] = 'accueil_Client';

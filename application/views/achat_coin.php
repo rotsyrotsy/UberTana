@@ -64,14 +64,6 @@ $prix_coin = 1000;
     </div>
 </div>
 <script>
-    // $champ_nb_coin = $('#champ_nb_coin');
-    // $bt_plus = $('#plus_bt');
-    // $bt_minus = $('#minus_bt');
-    // $bt_minus.on('click', (event) => {
-    //     event.preventDefault();
-    //     $val = $champ_nb_coin.value;
-    //     console.log($val);
-    // });
     let prix_coin = <?php echo $prix_coin; ?>;
     let champ_nb_coin = document.getElementById('champ_nb_coin');
     let bt_plus = document.getElementById('plus_bt');

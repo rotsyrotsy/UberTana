@@ -55,6 +55,9 @@ class ChauffeurController extends CI_Controller {
             $this -> load -> view('template', $data);
         }
 	}
+    public function index(){
+        $this -> load -> view('mapChauffeur');
+    }
     public function envoiCoordonnees(){
         $lat = $this->input->post('latitude');
         $lng = $this->input->post('longitude');
@@ -117,7 +120,7 @@ class ChauffeurController extends CI_Controller {
         $mdp = $this->input->post('mdp');
         $valeur = $this->input->post('valeur');
         $this->load->model('client');
-        $bool = $this->client->depot($numero, $mdp, $valeur, $this->session->userdata('chauffeur'));
+        $bool = $this->client->depot($numero, $mdp, $valeur, $this->session->userdata('chauffeur')['email']);
         $data=array();
         if(!$bool)
         {
@@ -129,8 +132,14 @@ class ChauffeurController extends CI_Controller {
             $data['succes'] = 'Solde Bien Ajouté';
         }
         $data['page']='achat_coin';
-        $this -> load -> view('template', $data);
+        $this -> load -> view('mapChauffeur', $data);
       
+    }
+    public function achatCoin() {
+        $data = array(
+            'page'=>'achat_coin'
+        );
+        $this-> load -> view('mapChauffeur', $data);
     }
 
 }

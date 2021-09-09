@@ -13,16 +13,16 @@
               </div>
               <div class="col-md-6">
                 <div class="detail-box">
-                  <h1>
-                    Design
+                <h1>
+                    Uber
                     <br />
-                    Agency
+                    Tana
                   </h1>
                   <p>
-                    There are many variations of passages of Lorem Ipsum available, but the
+                    Bienvenue chers Chauffeurs et Passagers...
                   </p>
                   <a href="">
-                    Contact Us
+                    Contactez-nous
                   </a>
                 </div>
               </div>
@@ -33,11 +33,11 @@
       </div>
       <div class="carousel_btn-box">
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="sr-only">Previous</span>
+          <span class="sr-only">Precedent</span>
         </a>
         <img src="<?php echo site_url("assets/images/line.png") ?>" alt="" />
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="sr-only">Next</span>
+          <span class="sr-only">Suivant</span>
         </a>
       </div>
     </div>
@@ -77,12 +77,15 @@
     <div class="box ">
       <div class="detail-box">
         <div class="heading_container">
-          <h2>
+        <h2>
             A Propos de <span>Uber</span> Tana
           </h2>
         </div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        Uber Tana a pour but de mettre en contact les passagers avec des conducteurs réalisant 
+        des services de transport pour une amélioration du cadre des transports dans la capitale de 
+        Madagascar, d’où son nom. Elle offre plus de securite au deplacement grace a la localisation
+        du point de depart et de la destination de trajet. 
         </p>
         <a href="">
           Voir Plus
