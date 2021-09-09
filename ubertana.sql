@@ -124,7 +124,7 @@ CREATE OR REPLACE PROCEDURE depot (email VARCHAR, value DOUBLE PRECISION) AS $$
         declare 
             ratio DOUBLE PRECISION;
         BEGIN
-            select into ration ariary/coin from CONFIG limit 1;
+            select into ratio ariary/coin from CONFIG limit 1;
             insert into depot values (depot_id(), email, ratio*value, current_timestamp);
             commit;  
         END;
