@@ -29,10 +29,10 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet" />
 
 
-  <link href="<?php echo site_url("assets/css/bootstrap.css") ?>"   rel="stylesheet">
+  <link href="<?php echo site_url("assets/css/bootstrap.css") ?>" rel="stylesheet">
   <link href="<?php echo site_url("assets/css/style.css") ?>" rel="stylesheet">
   <link href="<?php echo site_url("assets/css/responsive.css") ?>" rel="stylesheet">
-  
+
 
 
   <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>
@@ -45,9 +45,9 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="#">
-            <img  src="<?php echo site_url("assets/images/logo.png") ?>" alt="" />
+            <img src="<?php echo site_url("assets/images/logo.png") ?>" alt="" />
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button style="background-color: rgba(255,255,255,0.25);" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -63,7 +63,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo site_url("Accueil/login"); ?>">
+                  <a class="nav-link" href="<?php echo site_url("login"); ?>">
                     Connexion
                   </a>
                 </li>
@@ -73,7 +73,7 @@
                 <li class="nav-item ">
                   <a class="nav-link" href="<?php echo site_url('Accueil/inscription')?>?option=chauffeur">Inscription chauffeur</a>
                 </li>
-              
+
               </ul>
             </div>
           </div>
@@ -86,8 +86,8 @@
 
 
   <!-- contact section -->
- 
-  <?php include $page.".php"; ?>
+
+  <?php include $page . ".php"; ?>
 
   <!-- info section -->
 
@@ -182,9 +182,9 @@
   <script type="text/javascript" src="<?php echo site_url("assets/js/custom.js") ?>"></script>
   <!-- <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script> -->
   <!-- <script type="text/javascript" src="assets/js/bootstrap.js"></script> -->
-   <!-- <script type="text/javascript" src="assets/js/custom.js"></script> -->
+  <!-- <script type="text/javascript" src="assets/js/custom.js"></script> -->
 
- 
+
 
 </body>
 

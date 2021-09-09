@@ -1,9 +1,30 @@
+<style>
+    body {
+        background-image: url('<?php echo site_url('assets/images/viktor-bystrov-qd-zd2MoeE8-unsplash.jpg') ?>');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: lightgray;
+    }
+    a {
+        color: white;
+    }
+    h2 {
+        color: white;
+    }
+    label {
+        color : gray;
+    }
+    input {
+        color : gray;
+        border-color: lightgray;
+    }
+</style>
 <section class="contact_section layout_padding-bottom layout_padding2-top">
     <div class="container">
-        <div class="row justify-content-center col-md-8 container-bg" style="margin: auto;">
-            <div class="col-md-12" id="client_panel" style="">
-                <a class="col-md-10" id="vers_chauffeur" href="" style="text-decoration: none; color:cadetblue; margin-left: 10px; margin-top:10px; display: block;">
-                    <NOBR>Se connecter en tant que Chauffeur</NOBR>
+        <div class="row justify-content-center col-md-8 container-bg" style="margin: auto; background-color: rgba(100, 100, 100, 0.5); ">
+            <div class="col-md-12" id="client_panel" style="padding: 0;">
+                <a class="col-md-10" id="vers_chauffeur" href="" style="color:lightgray; text-decoration: none; margin-left: 10px; margin-top:10px; display: block;">
+                    Se connecter en tant que Chauffeur
                 </a>
                 <div class="col-md-12">
                     <div class="" style="">
@@ -28,8 +49,8 @@
                 </div>
             </div>
             <div class="col-md-12" id="chauffeur_panel" style=" display : none;">
-                <a class="col-md-10" id="vers_client" href="" style="text-decoration: none; color:cadetblue; margin-left: 10px; margin-top:10px; display: block;">
-                    <NOBR>Se connecter en tant que Client</NOBR>
+                <a class="col-md-10" id="vers_client" href="" style="text-decoration: none;color:lightgray; margin-left: 10px; margin-top:10px; display: block;">
+                    Se connecter en tant que Client
                 </a>
                 <div class="col-md-12">
                     <div class="" style="">
@@ -43,7 +64,7 @@
                                     <input id="champ_mdp_client" name="mdp" type="password" placeholder="Mot de passe" />
                                 </div>
                                 <div class="d-flex ">
-                                    <button id="bt_connect_client">
+                                    <button id="bt_connect_chauffeur">
                                         SE CONNECTER
                                     </button>
                                 </div>
