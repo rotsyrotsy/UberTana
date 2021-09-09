@@ -218,7 +218,7 @@
                   <a class="nav-link" href="<?php echo site_url('ChauffeurController/index'); ?>">Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="<?php echo site_url('ChauffeurController/guide'); ?>">
                     Guide
                   </a>
                 </li>
@@ -237,7 +237,9 @@
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
               </form>
-              <a class="nav-link" href="#">Chauffeur <?php echo $chauffeur['nom']; ?></a>
+              <a href="#" style=" font-style: italic; color:black; font-weight:bold;">
+                  Chauffeur <?php echo $chauffeur['nom']; ?>
+              </a>
               <div style="color:orange;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
                   <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z"/>
@@ -264,7 +266,7 @@
     <div class="container px-0">
       <div class="heading_container">
         <h2 class="">
-          Ac<span>cu</span>eil
+        <span>Local</span>isation
         </h2>
       </div>
     </div>
@@ -299,34 +301,7 @@
       </div>
     </div>
   </section>
-  <section class="client_section layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          What <span>says</span> our clients
-        </h2>
-      </div>
-      <div class="box">
-        <div class="client_id">
-          <div class="name">
-            <h4>
-              Sandy <br>
-              Nor
-            </h4>
-          </div>
-          <div class="img-box">
-            <img src="<?php echo site_url("assets/images/client.jpg") ?>" alt="">
-          </div>
-        </div>
-        <div class="detail-box">
-          <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem
-          </p>
-          <img src="<?php echo site_url("assets/images/quote.png") ?>" alt="">
-        </div>
-      </div>
-    </div>
-  </section>
+  
   <?php } ?>
   
   
@@ -352,29 +327,34 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-3">
-            <h6>
-              A PROPOS
+          <h6>
+              Principes de Confidentialites
             </h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+              Nous créons des normes de confidentialité qui conviennent à tous. 
+              C'est une responsabilité qui s'ajoute à la création de produits et de 
+              services gratuits accessibles à tous. Nous nous basons sur ces principes 
+              pour orienter nos produits, nos processus et nos employés afin de respecter la 
+              confidentialité et la sécurité des données de nos utilisateurs.
             </p>
           </div>
           <div class="col-md-6 col-lg-3">
-            <h6>
-              Instagram
+          <h6>
+              S&eacute;curit&eacute;
             </h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipi
-              scing elit, sed doLorem ipsum dolor sit
-            </p>
+              Chaque fonctionnalite de securite et chaque clause de notre Charte de la communaute contribuent
+              a creer un environnement sur pur nos utilisateurs.
+           </p>
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
-              AIDE
+              Condition d'utilisation
             </h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+            Le présent document décrit les règles que vous acceptez lorsque vous utilisez nos services.
             </p>
+            <a href="#">Lisez nos conditions d'utilisation</a>
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
@@ -383,7 +363,7 @@
             <div class="info_link-box">
               <a href="">
                 <img src="<?php echo site_url("assets/images/location.png") ?>" alt="">
-                <span> Gb road 123 london Uk </span>
+                <span> IT University </span>
               </a>
               <a href="">
                 <img src="<?php echo site_url("assets/images/call.png") ?>" alt="">

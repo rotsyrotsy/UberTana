@@ -58,6 +58,10 @@ class ChauffeurController extends CI_Controller {
     public function index(){
         $this -> load -> view('mapChauffeur');
     }
+    public function guide(){
+        $data=array('page'=>'guide');
+        $this -> load -> view('mapChauffeur',$data);
+    }
     public function envoiCoordonnees(){
         $lat = $this->input->post('latitude');
         $lng = $this->input->post('longitude');

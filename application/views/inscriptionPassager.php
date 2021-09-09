@@ -1,6 +1,6 @@
 <style>
     body {
-        background-image: url('<?php echo site_url('assets/images/mark-cruz-z5QwjwMzPdY-unsplash (2).jpg') ?>');
+        background-image: url('<?php echo site_url('assets/images/bavladimir-proskurovskiy-T5PvaqELSww-unsplash.jpg') ?>');
         background-repeat: no-repeat;
         background-size: 100%;
         background-color: lightgray;
@@ -60,6 +60,7 @@
                             </select>
                         </div>
                         <br>
+                        
                         <div class="col-md-12">
                             <input type="text" name="nationalite" placeholder="Nationalite" style="font-size: 15px; padding: 4px;" />
                         </div>
@@ -91,12 +92,12 @@
                                 S'inscrire
                             </button>
                         </div>
-                    </form>
-                    <?php if (isset($errorLogin)){ ?>
+                        <?php if (isset($errorLogin)){ ?>
                         <div class='alert alert-error' role='alert'>
-                            <?php echo $errorInscriptionDriver; ?>
+                            <?php echo $errorLogin; ?>
                         </div>
                     <?php } ?>
+                    </form>
                 </div>
             </div>
         </div>

@@ -16,8 +16,9 @@ class Passager extends CI_Model{
 
 	}
 	public function getPassagerLogin($mail, $mdp){
-		$query = "SELECT * FROM Passager where email='%s' and  mdp='%s'";
-		$result = $this->db->query(sprintf($query,$mail,$mdp));
+		$query = "SELECT * FROM Passager where email='%s' ";
+		$query = sprintf($query,$mail,$mdp);
+		$result = $this->db->query($query);
 		$passager = array();
 		foreach ($result->result_array() as $key) {
 			$passager[] = $key;

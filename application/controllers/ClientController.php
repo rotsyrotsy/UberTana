@@ -7,6 +7,13 @@ class ClientController extends CI_Controller {
 		parent::__construct();
 
 	}
+    public function index(){
+        $this -> load -> view('mapClient');
+    }
+    public function guide(){
+        $data=array('page'=>'guide');
+        $this -> load -> view('mapClient',$data);
+    }
     public function inscription(){
         $email = $this->input->post('email');
         $nom = $this->input->post('nom');
@@ -20,7 +27,7 @@ class ClientController extends CI_Controller {
         $passager = $this->passager->getPassagerLogin($email,$mdp);
         if ($passager!=null){
             $data = array(
-                'page' => 'inscriptionClient',
+                'page' => 'inscriptionPassager',
                 'errorLogin' => "Cet email existe déjà, veuillez en entrer un autre."
             );
             $this -> load -> view('template', $data);

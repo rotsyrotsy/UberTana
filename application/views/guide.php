@@ -1,3 +1,24 @@
+<style>
+    body {
+        background-image: url('<?php echo site_url('assets/images/viktor-bystrov-qd-zd2MoeE8-unsplash.jpg') ?>');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: lightgray;
+    }
+    a {
+        color: white;
+    }
+    h2 {
+        color: white;
+    }
+    label {
+        color : gray;
+    }
+    input {
+        color : gray;
+        border-color: lightgray;
+    }
+</style>
 <section class="contact_section layout_padding-bottom layout_padding2-top">
     <div class="container">
         <div class="row justify-content-center col-md-8 container-bg" style="margin: auto;">

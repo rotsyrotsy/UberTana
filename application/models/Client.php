@@ -48,9 +48,8 @@ class Client extends CI_Model{
 		}
 	}
 	public function insertChauffeur($email,$nom,$prenom, $modele, $matricule , $mdp,$numtel, $nationalite, $dtn,$sexe){
-		$query = "INSERT INTO Client (email,nom,prenom, modele, matricule , mdp,numtel, nationalite, dtn,sexe, soldeinit) VALUES('%s','%s','%s','%s', '%s', '%s','%s','%s','%s','%s' )";
+		$query = "INSERT INTO Client (email,nom,prenom, modele, matricule , mdp,numtel, nationalite, dtn,sexe) VALUES('%s','%s','%s','%s', '%s', '%s','%s','%s','%s','%s' )";
 		$query = sprintf($query,$email,$nom,$prenom, $modele, $matricule , $mdp,$numtel, $nationalite, $dtn,$sexe);
-		// var_dump($query);
 		$this->db->query($query);
 	}
 	public function getProximite1km($tab, $lat, $long){

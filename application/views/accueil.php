@@ -19,7 +19,7 @@
                     Tana
                   </h1>
                   <p>
-                    Bienvenue chers Chauffeurs et Passagers...
+                    Préfériez le confort du covoiturage aux autres moyens de transport
                   </p>
                   <a href="">
                     Contactez-nous
@@ -56,14 +56,14 @@
               Projet
             </h2>
             <p>
-              Changez la façon dont vous et vos collaborateurs se déplacent
+              Changez la façon dont vous vous déplacez
             </p>
           </div>
         </div>
       </div>
       <div class="col-md-4 offset-md-1">
         <div class="btn-box">
-          <a href="">
+          <a href="<?php echo site_url("Accueil/guide"); ?>">
             Savoir Comment
           </a>
         </div>

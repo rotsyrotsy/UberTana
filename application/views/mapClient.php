@@ -24,7 +24,7 @@ $passager =  $this->session->userdata('passager');
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet" />
-
+  <link href="<?php echo site_url("assets/css/styleMap.css") ?>" rel="stylesheet">
   <link href="<?php echo site_url("assets/css/style.css") ?>" rel="stylesheet">
   <link href="<?php echo site_url("assets/css/responsive.css") ?>" rel="stylesheet">
 
@@ -168,10 +168,10 @@ $passager =  $this->session->userdata('passager');
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="<?php echo site_url('ClientController/index'); ?>">Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="<?php echo site_url('ClientController/guide'); ?>">
                     Guide
                   </a>
                 </li>
@@ -185,7 +185,9 @@ $passager =  $this->session->userdata('passager');
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
               </form>
-              <a class="nav-link" href="#">Client <?php echo $passager['nom']; ?></a>
+              <a href="#" style=" font-style: italic; color:black; font-weight:bold;">
+                Client <?php echo $passager['nom']; ?>
+              </a>
             </div>
           </div>
         </nav>
@@ -195,12 +197,14 @@ $passager =  $this->session->userdata('passager');
   </div>
   <!-- end hero area -->
 
-
+  <?php if (isset($page)){ 
+    include($page.".php");
+  } else { ?>
   <section class="contact_section layout_padding-bottom layout_padding2-top">
     <div class="container px-0">
       <div class="heading_container">
         <h2 class="">
-          Ac<span>cu</span>eil
+          <span>Local</span>isation
         </h2>
       </div>
 
@@ -266,34 +270,8 @@ $passager =  $this->session->userdata('passager');
       </div>
     </div>
   </section>
-  <section class="client_section layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          What <span>says</span> our clients
-        </h2>
-      </div>
-      <div class="box">
-        <div class="client_id">
-          <div class="name">
-            <h4>
-              Sandy <br>
-              Nor
-            </h4>
-          </div>
-          <div class="img-box">
-            <img src="<?php echo site_url("assets/images/client.jpg") ?>" alt="">
-          </div>
-        </div>
-        <div class="detail-box">
-          <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem
-          </p>
-          <img src="<?php echo site_url("assets/images/quote.png") ?>" alt="">
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php } ?>
+  
     <!-- info section -->
 
     <section class="info_section  layout_padding2-top">
@@ -317,29 +295,34 @@ $passager =  $this->session->userdata('passager');
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-3">
-            <h6>
-              A PROPOS
+          <h6>
+              Principes de Confidentialites
             </h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+              Nous créons des normes de confidentialité qui conviennent à tous. 
+              C'est une responsabilité qui s'ajoute à la création de produits et de 
+              services gratuits accessibles à tous. Nous nous basons sur ces principes 
+              pour orienter nos produits, nos processus et nos employés afin de respecter la 
+              confidentialité et la sécurité des données de nos utilisateurs.
             </p>
           </div>
           <div class="col-md-6 col-lg-3">
-            <h6>
-              Instagram
+          <h6>
+              S&eacute;curit&eacute;
             </h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipi
-              scing elit, sed doLorem ipsum dolor sit
-            </p>
+              Chaque fonctionnalite de securite et chaque clause de notre Charte de la communaute contribuent
+              a creer un environnement sur pur nos utilisateurs.
+           </p>
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
-              AIDE
+              Condition d'utilisation
             </h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+            Le présent document décrit les règles que vous acceptez lorsque vous utilisez nos services.
             </p>
+            <a href="#">Lisez nos conditions d'utilisation</a>
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
@@ -348,7 +331,7 @@ $passager =  $this->session->userdata('passager');
             <div class="info_link-box">
               <a href="">
                 <img src="<?php echo site_url("assets/images/location.png") ?>" alt="">
-                <span> Gb road 123 london Uk </span>
+                <span> IT University </span>
               </a>
               <a href="">
                 <img src="<?php echo site_url("assets/images/call.png") ?>" alt="">
@@ -374,7 +357,7 @@ $passager =  $this->session->userdata('passager');
     </section>
     <!-- footer section -->
 
-
+  </section>
   <!-- end info section -->
   
    <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>

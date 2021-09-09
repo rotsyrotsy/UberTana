@@ -1,3 +1,28 @@
+<style>
+    body {
+        background-image: url('<?php echo site_url('assets/images/bavladimir-proskurovskiy-T5PvaqELSww-unsplash.jpg') ?>');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-color: lightgray;
+        background-attachment: fixed;
+    }
+    a {
+        color: white;
+    }
+    h2 {
+        color: white;
+    }
+    label {
+        color : gray;
+    }
+    input {
+        color : gray;
+    }
+    input::placeholder {
+        color: white;
+        opacity: 1;
+    }
+</style>
 <section class="contact_section layout_padding-bottom layout_padding2-top">
     <div class="container">
         <div class="container-bg col-md-6 justify-content-center" style="margin:auto;">
