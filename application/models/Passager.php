@@ -52,7 +52,7 @@ class Passager extends CI_Model{
 		$XLongitude1=$long-$XLongitude;
 		$XLongitude2=$long+$XLongitude;
 
-		$ret = [];
+		//$ret = [];
 		for ($i=0; $i<count($tab); $i++){
 			if ($tab[$i]['longitude']> $XLongitude1 && $tab[$i]['longitude']<= $XLongitude2 && $tab[$i]['latitude']> $XLatitude1 && $tab[$i]['latitude']<= $XLatitude2) {
 				array_push($ret,$tab[$i]);

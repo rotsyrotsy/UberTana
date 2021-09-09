@@ -1,196 +1,376 @@
 <?php
-  if (!isset($page) || $page == null) {
-    $page = 'gestion_admin';
+  if (!isset($page_admin) || $page_admin == null) {
+    $page_admin = 'gestion_admin_accueil';
   }
   // echo $page;
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
 
-  <title>
-    Uber Tana
-  </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <title>Administrateur</title>
 
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet" />
+    <!-- Custom fonts for this template-->
+    <link href="<?php echo site_url("assets/vendor/fontawesome-free/css/all.min.css") ?>" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-  <!-- bootstrap core css -->
-  <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css" /> -->
+    <!-- Custom styles for this template-->
+    <link href="<?php echo site_url("assets/css/sb-admin-2.min.css") ?>" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <!-- <link href="css/style.css" rel="stylesheet" /> -->
-  <!-- responsive style -->
-  <!-- <link href="css/responsive.css" rel="stylesheet" /> -->
-
-  <link href="<?php echo site_url("assets/css/bootstrap.css") ?>"   rel="stylesheet">
-  <link href="<?php echo site_url("assets/css/style.css") ?>" rel="stylesheet">
-  <link href="<?php echo site_url("assets/css/responsive.css") ?>" rel="stylesheet">
-  
-
-
-  <script type="text/javascript" src="<?php echo site_url("assets/js/jquery-3.4.1.min.js") ?>"></script>
 </head>
 
-<body class="sub_page">
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <a class="navbar-brand" href="#">
-            <img  src="<?php echo site_url("assets/images/logo.png") ?>" alt="" />
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+<body id="page-top">
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <?php if($page == "statistiques_admin") { ?>
-                  <li class="nav-item">
-                      <a class="nav-link " href="#">Gestion des personnels<span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item active">
-                      <a class="nav-link" href="#">Statistiques</a>
-                  </li>
-                  <?php } else { ?>
-                    <li class="nav-item active">
-                      <a class="nav-link " href="#">Gestion des personnels<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Statistiques</a>
-                    </li>
-                  <?php } ?>
-              </ul>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Admin <sup>2</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="<?php echo site_url("admin/index"); ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Tableau de Bord</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
             </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
-  </div>
-  <!-- end hero area -->
 
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Gestion </span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Modification:</h6>
+                        <a class="collapse-item" href="<?php echo site_url("admin/gestion_chauffeur"); ?>">Chauffeur</a>
+                        <a class="collapse-item" href="<?php echo site_url("admin/gestion_client"); ?>">Client</a>
+                        <a class="collapse-item" href="<?php echo site_url("admin/gestion_coin"); ?>">Coin</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-  <!-- contact section -->
- 
-  <?php include $page.".php"; ?>
-
-  <!-- info section -->
-
-  <section class="info_section  layout_padding2-top">
-    <div class="social_container">
-      <div class="social_box">
-        <a href="">
-          <img src="<?php echo site_url("assets/images/fb.png") ?>" alt="">
-        </a>
-        <a href="">
-          <img src="<?php echo site_url("assets/images/twitter.png") ?>" alt="">
-        </a>
-        <a href="">
-          <img src="<?php echo site_url("assets/images/linkedin.png") ?>" alt="">
-        </a>
-        <a href="">
-          <img src="<?php echo site_url("assets/images/youtube.png") ?>" alt="">
-        </a>
-      </div>
-    </div>
-    <div class="info_container ">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              A PROPOS
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              Instagram
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipi
-              scing elit, sed doLorem ipsum dolor sit
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              AIDE
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              CONTACTEZ-NOUS
-            </h6>
-            <div class="info_link-box">
-              <a href="">
-                <img src="<?php echo site_url("assets/images/location.png") ?>" alt="">
-                <span> Gb road 123 london Uk </span>
-              </a>
-              <a href="">
-                <img src="<?php echo site_url("assets/images/call.png") ?>" alt="">
-                <span>+261 34 59 426 51</span>
-              </a>
-              <a href="">
-                <img src="<?php echo site_url("assets/images/mail.png") ?>" alt="">
-                <span> uberTana@gmail.com</span>
-              </a>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Addons
             </div>
-          </div>
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo site_url("admin/index"); ?>">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Statistiques</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+            
+            <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                                <img class="img-profile rounded-circle"
+                                    src="<?php echo site_url("assets/images/undraw_profile.svg") ?>">
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <?php include $page_admin.".php"; ?>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Uber Tana 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
         </div>
-      </div>
+        <!-- End of Content Wrapper -->
+
     </div>
-    <!-- footer section -->
-    <section class=" footer_section">
-      <div class="container">
-        <p>
-          &copy; <span id="displayYear"></span>
-          <a href="#"> Uber Tana</a>
-        </p>
-      </div>
-    </section>
-    <!-- footer section -->
+    <!-- End of Page Wrapper -->
 
-  </section>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-  <!-- end info section -->
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-  
-  <script type="text/javascript" src="<?php echo site_url("assets/js/bootstrap.js") ?>"></script>
-  <!-- <script type="text/javascript" src="<?php echo site_url("assets/js/owl.carousel.min.js") ?>">
-  </script> -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo site_url("assets/vendor/jquery/jquery.min.js") ?>"></script>
+    <script src="<?php echo site_url("assets/vendor/bootstrap/js/bootstrap.bundle.min.js") ?>"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
+    <!-- Core plugin JavaScript-->
+    <script src="<?php echo site_url("assets/vendor/jquery-easing/jquery.easing.min.js") ?>"></script>
 
-  <script type="text/javascript" src="<?php echo site_url("assets/js/custom.js") ?>"></script>
-  <!-- <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script> -->
-  <!-- <script type="text/javascript" src="assets/js/bootstrap.js"></script> -->
-   <!-- <script type="text/javascript" src="assets/js/custom.js"></script> -->
+    <!-- Custom scripts for all pages-->
+    <script src="<?php echo site_url("assets/js/sb-admin-2.min.js") ?>"></script>
 
- 
+    <!-- Page level plugins -->
+    <script src="<?php echo site_url("assets/vendor/chart.js/Chart.min.js") ?>"></script>
 
+    <!-- Page level custom scripts -->
+    <script src="<?php echo site_url("assets/js/demo/chart-area-demo.js") ?>"></script>
+    <script src="<?php echo site_url("assets/js/demo/chart-pie-demo.js") ?>"></script>
+    <?php if(ISSET($chiffre)){
+			$nom = array();
+			$note = array();
+			for ($i=0; $i < count($chiffre) ; $i++) { 
+			    $mois[$i] = $chiffre[$i]['mois'];
+			    $valeur[$i] = $chiffre[$i]['valeur'];
+			    
+		} ?>
+    <script>
+                var mois = <?php echo json_encode($mois); ?>;
+                var valeur = <?php echo json_encode($valeur); ?>;
+                var ctx = document.getElementById('myChart');
+
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: mois,
+                        datasets: [{
+                            label: "Chiffre d'Affaire",
+                            data: valeur,
+                            backgroundColor: 
+                                '#4e73df',
+
+                            borderColor: 
+                                'rgba(153, 102, 235, 1)',
+
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                	}
+                                }]
+                    		}
+                    	}
+                });
+			</script>
+    <?php }?>
+        
+        <?php if(ISSET($chauffeur)){
+			$nom = array();
+			$note = array();
+			for ($i=0; $i < count($chauffeur) ; $i++) { 
+			    $nom[$i] = $chauffeur[$i]['nomchauffeur'];
+			    $note[$i] = $chauffeur[$i]['notemoyenne'];	    
+		} ?>
+
+        <script>
+                var nom = <?php echo json_encode($nom); ?>;
+                var note = <?php echo json_encode($note); ?>;
+                var ctx = document.getElementById('myChart');
+
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: nom,
+                        datasets: [{
+                            label: 'Note',
+                            data: note,
+                            backgroundColor: 
+                                '#4e73df',
+
+                            borderColor: 
+                                'rgba(153, 102, 235, 1)',
+
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                	}
+                                }]
+                    		}
+                    	}
+                });
+			</script>
+    	<?php }?>
+
+        <?php if(ISSET($passager)){
+			$nom = array();
+			$note = array();
+			for ($i=0; $i < count($passager) ; $i++) { 
+			    $nom[$i] = $passager[$i]['nompassager'];
+			    $note[$i] = $passager[$i]['notemoyenne'];
+			    
+		} ?>
+
+            <script>
+                var nom = <?php echo json_encode($nom); ?>;
+                var note = <?php echo json_encode($note); ?>;
+                var ctx = document.getElementById('myChart');
+
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: nom,
+                        datasets: [{
+                            label: 'Note',
+                            data: note,
+                            backgroundColor: 
+                                '#4e73df',
+
+                            borderColor: 
+                                'rgba(153, 102, 235, 1)',
+
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                	}
+                                }]
+                    		}
+                    	}
+                });
+			</script>
+    	<?php }?>
 </body>
 
 </html>
