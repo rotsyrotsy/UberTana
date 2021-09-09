@@ -41,7 +41,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Admin Ubertana</div>
             </a>
 
             <!-- Divider -->
@@ -167,9 +167,9 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                                <a href="<?php echo site_url("Accueil/index") ?>" style="color:black;"><span class="mr-2 d-none d-lg-inline text-gray-600 small">Deconnexion</span></a>
                                 <img class="img-profile rounded-circle"
                                     src="<?php echo site_url("assets/images/undraw_profile.svg") ?>">
                             </a>

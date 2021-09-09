@@ -271,8 +271,8 @@
       </div>
     </div>
     <div class="container container-bg">
-      <div class="row " style="height:500px;">
-        <div class="col-lg-8 col-md-7 px-0">
+      <div class="row " >
+        <div class="col-lg-8 col-md-7 px-0" style="height:500px">
           <div id="carteId">LA CARTE</div>
         </div>
         <div class="col-md-5 col-lg-4 px-0">

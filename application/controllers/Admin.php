@@ -101,5 +101,20 @@
 		// }
 
 
+		// public function delete($id) {
+		// 	$this->produit_model->deleteById($id);
+		// 	getProduit();
+		// }
+		// public function getListNoteDriver()
+		// {
+		// 	$data['driverNote'] = $this->admin->getDriverNote();
+		// 	$this->load->view("vue_admin",$data);
+		// }
+		// public function getListNotePassenger()
+		// {
+		// 	$data['PassengerNote'] = $this->admin->getPassengerNote();
+		// 	$this->load->view("vue_admin",$data);
+		// }
+		
 	}
 ?>

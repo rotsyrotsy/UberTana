@@ -210,19 +210,19 @@ $passager =  $this->session->userdata('passager');
 
     </div>
     <div class="container container-bg">
-      <div class="row " style="height:500px;">
-        <div class="col-lg-8 col-md-7 px-0">
+      <div class="row"">
+        <div class="col-lg-8 col-md-7 px-0" style="height:500px" >
           <div id="carteId">LA CARTE</div>
         </div>
         <div class="col-md-5 col-lg-4 px-0">
             <div class="alert alert-info" role="alert">  
               <input id="pac-input" class="controls" type="text" placeholder="Rechercher un lieu" />
             </div>
-          <div class="d-flex ">
-            <button id="send">
-              Envoyer les coordonnées
-            </button>
-          </div>
+            <div class="d-flex ">
+              <button id="send">
+                Envoyer les coordonnées
+              </button>
+            </div>
           <span id="verif"></span></br>
           <div>
             <div>
