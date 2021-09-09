@@ -53,24 +53,24 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link " href="<?php echo site_url('Accueil/index'); ?>">Accueil <span class="sr-only">(current)</span></a>
+            <ul class="navbar-nav  ">
+                <li class="nav-item <?php echo $page == 'accueil'?'active':''; ?>">
+                  <a style="<?php echo $page=='guide' || $page=='login'?'color: lightgray':''; ?>" class="nav-link " href="<?php echo site_url('Accueil/index'); ?>">Accueil <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo $page == 'guide'?'active':''; ?>">
                   <a class="nav-link" href="<?php echo site_url("Accueil/guide"); ?>">
                     Guide
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo $page == 'login'?'active':''; ?>">
                   <a class="nav-link" href="<?php echo site_url("Accueil/login"); ?>">
                     Connexion
                   </a>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item <?php echo $page == 'inscriptionPassager'?'active':''; ?>">
                   <a class="nav-link" href="<?php echo site_url('Accueil/inscription')?>?option=passager">Inscription passager</a>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item <?php echo $page == 'inscriptionChauffeur'?'active':''; ?>">
                   <a class="nav-link" href="<?php echo site_url('Accueil/inscription')?>?option=chauffeur">Inscription chauffeur</a>
                 </li>
 
