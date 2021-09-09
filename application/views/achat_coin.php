@@ -13,7 +13,16 @@ $prix_coin = 1000;
 <div class="container">
     <div class="row container-bg justify-content-center">
         <div class="col-md-6"style="background-color: rgba(251,251,251); padding: 30px; border-radius: 15px; border: 1px solid rgb(251,251,251);">
+            <?php if(isset($error)){ ?>
+            <p class="alert alert-danger"><?php echo $error ?></p>
+            <?php }else if(isset($succes)){ ?>
+            <p class="alert alert-success"><?php echo $succes ?></p>
+            <?php } ?>
+
             <h2>Achat de coin</h2>
+
+            <form action="<?php echo site_url('ChauffeurController/depot');?>" method="post">
+
             <div style="display: flex; flex-wrap: nowrap; margin-top: 40px;">
                 <label style="margin-right: 10px;" class="col-form-label">Coin : </label>
                 <input style="margin-right: 5px;" id="champ_nb_coin" type="number" min="0" value="0" name="valeur">
@@ -46,7 +55,10 @@ $prix_coin = 1000;
                 </div>
             </fieldset>
 
-            <button style="margin-top: 40px;" class="btn btn-secondary">Confirmer l'achat</button>
+            <button type="submit" style="margin-top: 40px;" class="btn btn-secondary">Confirmer l'achat</button>
+            </form>
+
+            
 
         </div>
     </div>

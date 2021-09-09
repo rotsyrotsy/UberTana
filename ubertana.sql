@@ -89,7 +89,7 @@ CREATE TABLE Match(
 
 CREATE TABLE BANKACCOUNT(
     cardNumber char(16) NOT NULL PRIMARY KEY,
-    password bytea NOT NULL,
+    password char(256) NOT NULL,
     sold DOUBLE PRECISION NOT NULL
 );
 

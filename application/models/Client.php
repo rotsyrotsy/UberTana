@@ -120,15 +120,16 @@ class Client extends CI_Model{
         $sold = $this->client->check_sold($cardNumber, $password);
         
         if($sold < $value){
-            throw new Exception('sold insuffisant !!');
+			return false;
+            //throw new Exception('sold insuffisant !!');
         } 
-
         $this->db->query($sql);
+		return true;
 
     }
 
     public function check_sold($cardNumber, $password){
-        $sql = "SELECT sold from BANKACCOUNT where cardNumber = %s and password = sha256(%s)";
+        $sql = "SELECT sold from BANKACCOUNT where cardNumber = %s and password = cast(sha256(%s) as char(256))";
         $sql = sprintf($sql, $this->db->escape($cardNumber), $this->db->escape($password));
         $query = $this->db->query($sql);
         $result = $query->row_array();

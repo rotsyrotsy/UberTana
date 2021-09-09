@@ -112,5 +112,25 @@ class ChauffeurController extends CI_Controller {
         );
         $this -> load -> view('template', $data);
     }
+    public function depot(){
+        $numero = $this->input->post('numero');
+        $mdp = $this->input->post('mdp');
+        $valeur = $this->input->post('valeur');
+        $this->load->model('client');
+        $bool = $this->client->depot($numero, $mdp, $valeur, $this->session->userdata('chauffeur'));
+        $data=array();
+        if(!$bool)
+        {
+            $data['error'] = 'Le Solde de votre Compte Bancaire est insuffisant';
+        
+        }
+        else
+        {
+            $data['succes'] = 'Solde Bien Ajouté';
+        }
+        $data['page']='achat_coin';
+        $this -> load -> view('template', $data);
+      
+    }
 
 }
