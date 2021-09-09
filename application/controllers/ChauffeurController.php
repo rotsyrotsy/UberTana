@@ -32,7 +32,7 @@ class ChauffeurController extends CI_Controller {
             $this -> load -> view('template', $data);
         }else{
             $this->client->insertChauffeur($email,$nom,$prenom, $modele, $matricule , $mdp,$numtel, $nationalite, $dtn,$sexe);
-            $new_chauffeur= array('email' => $email, 'mdp' => $mdp, 'nom'=>$nom);
+            $new_chauffeur= array('email' => $email,'nom' => $nom, 'mdp' => $mdp, 'numtel' =>$numtel,'sexe' =>$sexe, 'nationalite'=>$nationalite,'dtn'=>$dtn  );
             $this->session->set_userdata('chauffeur',$new_chauffeur);
             $this -> load -> view('mapChauffeur');
         }

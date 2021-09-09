@@ -33,7 +33,7 @@ class ClientController extends CI_Controller {
             $this -> load -> view('template', $data);
         }else{
             $this->passager->insertPassager($email,$nom,$prenom,  $mdp,$numtel, $nationalite, $dtn,$sexe);
-            $new_passager = array('email' => $email,'nom' => $nom, 'mdp' => $mdp);
+            $new_passager = array('email' => $email,'nom' => $nom, 'mdp' => $mdp, 'numtel' =>$numtel,'sexe' =>$sexe, 'nationalite'=>$nationalite,'dtn'=>$dtn  );
             $this->session->set_userdata('passager',$new_passager);
             $this -> load -> view('mapClient');
         }
